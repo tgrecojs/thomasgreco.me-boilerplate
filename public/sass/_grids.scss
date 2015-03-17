@@ -67,6 +67,15 @@ footer {
 }
 
 
+//Blog Assets
+.blog-wrapper {
+	@include span(8 at 2 isolate);
+}
+.blog-sidebar  {
+	@include span(3 last);
+}
+
+
 
 .gallery-item > img {
 	max-width: 300px;

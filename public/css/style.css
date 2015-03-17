@@ -203,6 +203,21 @@ footer {
 }
 
 /* line 71, ../sass/_grids.scss */
+.blog-wrapper {
+  width: 66.10169492%;
+  float: left;
+  margin-left: 8.47457627%;
+  margin-right: -100%;
+}
+
+/* line 74, ../sass/_grids.scss */
+.blog-sidebar {
+  width: 23.72881356%;
+  float: right;
+  margin-right: 0;
+}
+
+/* line 80, ../sass/_grids.scss */
 .gallery-item > img {
   max-width: 300px;
 }

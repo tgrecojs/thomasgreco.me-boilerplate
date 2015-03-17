@@ -1,0 +1,56 @@
+       <form ng-submit="add()">
+                <div class="row row-centered">
+                    <div class="col-xs-12 col-md-8 col-centered">
+                        <h3 class="form">Your Name</h3 class="form">
+            <textarea ng-model='name' type='text' id='nameInput' placeholder='Johnathon Doe' class="form-control name"></textarea>
+        </div>
+    </div>
+      <div class="row row-centered">
+        <div class="col-xs-12 col-md-8 col-centered">
+            <h3 class="form">Your Phone Number</h3 class="form">
+            <textarea ng-model='phone' type='text' id='phone' placeholder='914-555-5555' class="form-control name"></textarea>
+        </div>
+    </div>
+
+   <div class="row row-centered">
+        <div class="col-xs-12 col-md-8 col-centered">
+            <h3 class="form">Your Email Address</h3 class="form">
+            <textarea ng-model='email' type='text' id='email' placeholder='johndoe@hotmail.com' class="form-control name"></textarea>
+        </div>
+    </div>
+    <div class="row row-centered">
+        <div class="col-xs-12 col-md-8 col-centered">
+            <h3 class="form">Your location</h3 class="form">
+            <textarea ng-model='location' type='text' id='location' placeholder='Rye, New York' class="form-control name"></textarea>
+        </div>
+    </div>
+
+
+                   
+                        <div class="row row-centered">
+                        <div class="col-xs-12 col-md-8 col-centered">
+                            <h3 class="form">Select An Area of Assistance</h3>
+                            <select ng-model="lawArea" id="lawArea" name="lawArea" class="form-control">
+                                <option value="Real Estate">Real Estate</option>
+                                <option value="Tax Certiorari">Tax Certiorari</option>
+                                <option value="Medical Malpractice">Medical Malpractice</option>
+                                <option value="Business Formation">Business Formation</option>
+                                <option value="Estate Planning">Estate Planning</option>
+                            </select>
+                        </div>
+                        </div>
+                 
+
+
+    <div class="row row-centered">
+        <div class="col-xs-12 col-md-8 col-centered">
+            <h3 class="form">How Can Attorney Stroub Help you?</h3 class="form">
+            <textarea ng-model='msg' type='text' id='messageInput' placeholder='Any thoughts you would like to share about this application....' class="form-control comment"></textarea>
+        </div>
+    </div>
+     <div class="row row-centered">
+        <div class="col-xs-8 col-md-4 col-centered">
+    <input type="submit" value="Save" class="btn btn-primary btn-lg">
+  </div>
+  </div>
+</form>
