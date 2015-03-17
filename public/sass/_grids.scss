@@ -1,0 +1,77 @@
+// Requirements
+// ============
+
+@import "susy";
+
+
+$navy-blue: #051153;
+
+$susy: ( flow: ltr, 
+math: fluid, // static requires column-width
+//column-width: false, //# or % | auto
+container-position: center, // left, center, it is the padding
+//gutter-position: after, //before after | split | inside | inside-static
+columns: 12, gutters: 1/4, //Space Between Elements
+global-box-sizing: border-box, debug: (image: show-columns, output: overlay, toggle: top left));
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+
+
+
+body {
+	@include container;
+}
+
+header {
+	@include span(full);
+}
+
+footer {
+	@include span(full);
+	height: 100px;
+	background-color: $navy-blue;
+	color: white;
+	text-align: center;
+}
+
+
+
+.logo-row {
+	@include span(12);
+	> img {
+		@include span(4 at 5 isolate);
+		height: 500px;
+	}
+}
+
+.buttons {
+	@include display-flex;
+	@include flex-flow(row wrap);
+	> .links {
+		@include flex-grow(1);
+	}
+}
+
+
+.wrap {
+	@include span(full);
+}
+.main-content {
+	@include span(10 at 2 isolate);
+}
+
+.mc-slider {
+	@include span(6 at 4 isolate);
+}
+
+
+
+.gallery-item > img {
+	max-width: 300px;
+}
+
+
+
+
