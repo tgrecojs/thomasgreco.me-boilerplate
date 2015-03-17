@@ -63,6 +63,16 @@ li a {
     text-decoration: none;
 }
 
+.form-wrapper {
+ h2 {
+    text-align: center;
+    
+}
+.form-text {
+        text-align: center;
+    }
+}
+
 .fb-right, .fb-left {
     @include adjust-font-size-to(12px);
     margin: 0px;

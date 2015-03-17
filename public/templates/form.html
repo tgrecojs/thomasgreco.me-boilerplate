@@ -1,56 +1,45 @@
-       <form ng-submit="add()">
-                <div class="row row-centered">
-                    <div class="col-xs-12 col-md-8 col-centered">
-                        <h3 class="form">Your Name</h3 class="form">
-            <textarea ng-model='name' type='text' id='nameInput' placeholder='Johnathon Doe' class="form-control name"></textarea>
-        </div>
-    </div>
-      <div class="row row-centered">
-        <div class="col-xs-12 col-md-8 col-centered">
-            <h3 class="form">Your Phone Number</h3 class="form">
-            <textarea ng-model='phone' type='text' id='phone' placeholder='914-555-5555' class="form-control name"></textarea>
-        </div>
-    </div>
-
-   <div class="row row-centered">
-        <div class="col-xs-12 col-md-8 col-centered">
-            <h3 class="form">Your Email Address</h3 class="form">
-            <textarea ng-model='email' type='text' id='email' placeholder='johndoe@hotmail.com' class="form-control name"></textarea>
-        </div>
-    </div>
-    <div class="row row-centered">
-        <div class="col-xs-12 col-md-8 col-centered">
-            <h3 class="form">Your location</h3 class="form">
-            <textarea ng-model='location' type='text' id='location' placeholder='Rye, New York' class="form-control name"></textarea>
-        </div>
-    </div>
-
-
-                   
-                        <div class="row row-centered">
-                        <div class="col-xs-12 col-md-8 col-centered">
-                            <h3 class="form">Select An Area of Assistance</h3>
-                            <select ng-model="lawArea" id="lawArea" name="lawArea" class="form-control">
-                                <option value="Real Estate">Real Estate</option>
-                                <option value="Tax Certiorari">Tax Certiorari</option>
-                                <option value="Medical Malpractice">Medical Malpractice</option>
-                                <option value="Business Formation">Business Formation</option>
-                                <option value="Estate Planning">Estate Planning</option>
-                            </select>
-                        </div>
-                        </div>
-                 
-
-
-    <div class="row row-centered">
-        <div class="col-xs-12 col-md-8 col-centered">
-            <h3 class="form">How Can Attorney Stroub Help you?</h3 class="form">
-            <textarea ng-model='msg' type='text' id='messageInput' placeholder='Any thoughts you would like to share about this application....' class="form-control comment"></textarea>
-        </div>
-    </div>
-     <div class="row row-centered">
-        <div class="col-xs-8 col-md-4 col-centered">
-    <input type="submit" value="Save" class="btn btn-primary btn-lg">
+<div class="form-wrapper">
+  <h2>Contact Me Today!</h2>
+<p class="form-text">Want to get in touch? Fill out the form below, &amp; I will see that I get back to you as soon as possible</p>
+<form action="#">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="" />
   </div>
+   <div>
+    <label for="name">E-Mail Address:</label>
+    <input type="text" name="email" id="name" placeholder="" />
   </div>
-</form>
+   <div>
+    <label for="name">Location:</label>
+    <input type="text" name="location" id="name" placeholder="" />
+  </div>
+
+ 
+  
+  <div class="select-wrapper">
+    <label for="select-choice">Reason for Contact:</label>
+    <div class="styled-select" for="select-choice">
+      <select name="select-choice" id="select-choice">
+        <option value="Web Development">Web Development Enquiry</option>
+        <option value="Graphic Design">Help with Graphic Design</option>
+        <option value="Just Saying Hello">Just Saying Hello</option>
+      </select>
+    </div>
+    
+  </div>
+  
+  <div class="clr">
+    <label for="textarea">How May I Be of Assistance?</label><br />
+    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+  </div>
+
+  
+  <br /><br />
+  
+  <div>
+    <input type="submit" value="Submit" />
+    <div class="clr"></div>
+  </div>
+</form> 
+</div>

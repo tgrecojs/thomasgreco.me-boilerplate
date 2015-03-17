@@ -63,12 +63,165 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 16, ../sass/_grids.scss */
+/* Variables & Mixins */
+/* Changes Entire Color Scheme */
+/* line 8, ../sass/_form.scss */
+.roundedborder, input[type='text'], fieldset, .styled-select, textarea, input[type='submit'], .form-wrapper form {
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  border-radius: 0.2em;
+  border: 2px solid #020723;
+}
+
+/* General Layout */
+/* line 17, ../sass/_form.scss */
+input, select, textarea {
+  outline: none;
+}
+
+/* line 18, ../sass/_form.scss */
+label {
+  padding: 0 .5em 0 .5em;
+}
+
+/* Text Input */
+/* line 22, ../sass/_form.scss */
+input[type='text'] {
+  background-color: #f2f2f2;
+  color: #1a1a1a;
+  font-size: 2em;
+  margin: .2em 0 1em;
+  padding: .25em;
+  width: 100%;
+}
+
+/* line 32, ../sass/_form.scss */
+input[placeholder=""] {
+  color: #020723;
+}
+
+/* line 36, ../sass/_form.scss */
+::-webkit-input-placeholder {
+  color: white;
+}
+
+/* line 37, ../sass/_form.scss */
+:-moz-placeholder {
+  color: white;
+}
+
+/* FF 18 */
+/* line 38, ../sass/_form.scss */
+::-moz-placeholder {
+  color: white;
+}
+
+/* FF 19+ */
+/* line 39, ../sass/_form.scss */
+:-ms-input-placeholder {
+  color: white;
+}
+
+/* Radio Buttons */
+/* line 43, ../sass/_form.scss */
+fieldset {
+  margin-bottom: 2em;
+  padding: .5em .5em;
+}
+
+/* line 49, ../sass/_form.scss */
+input[type='radio'] {
+  appearance: none;
+  border: solid 0.1em white;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  color: #f0f;
+  cursor: pointer;
+  height: 2.5em;
+  width: 2.5em;
+  margin-top: 0;
+  vertical-align: text-top;
+}
+
+/* Dropdown Box */
+/* line 64, ../sass/_form.scss */
+.styled-select {
+  display: inline-block;
+  background-color: white;
+  color: #e6e6e6;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+  padding: .25em 0;
+  position: relative;
+  width: 15em;
+}
+
+/* line 77, ../sass/_form.scss */
+.styled-select:before {
+  font-family: "FontAwesome";
+  border: solid 1px #e6e6e6;
+  border-width: 0 0 0 1px;
+  content: '\f103';
+  color: #d9d9d9;
+  font-size: 1.25em;
+  padding-left: .25em;
+  position: absolute;
+  pointer-events: none;
+  right: .35em;
+}
+
+/* line 90, ../sass/_form.scss */
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #e6e6e6;
+  display: inline-block;
+  font-size: 1em;
+  margin: 0;
+  padding: 0 2em 0 1em;
+  width: 100%;
+}
+
+/* Text Area */
+/* line 103, ../sass/_form.scss */
+textarea {
+  background-color: #f2f2f2;
+  color: #1a1a1a;
+  font-size: 1em;
+  height: 10em;
+  margin: .5em 0 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+/* Submit Button */
+/* line 118, ../sass/_form.scss */
+input[type='submit'] {
+  border: 3px solid #e6e6e6;
+  background-color: #6178f6;
+  cursor: pointer;
+  color: #fff;
+  float: right;
+  font-size: 1.5em;
+  padding: .25em 1em;
+}
+
+/* line 128, ../sass/_form.scss */
+input[type='submit']:hover {
+  background-color: #0e2fe3;
+}
+
+/* line 11, ../sass/_grids.scss */
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
-/* line 23, ../sass/_grids.scss */
+/* line 14, ../sass/_grids.scss */
 body {
   max-width: 100%;
   margin-left: auto;
@@ -129,7 +282,7 @@ head:hover ~ body:before, head:hover ~ body body:before {
   background-position: left top;
 }
 
-/* line 27, ../sass/_grids.scss */
+/* line 17, ../sass/_grids.scss */
 header {
   width: 100%;
   float: left;
@@ -137,7 +290,7 @@ header {
   margin-right: 0;
 }
 
-/* line 31, ../sass/_grids.scss */
+/* line 20, ../sass/_grids.scss */
 footer {
   width: 100%;
   float: left;
@@ -149,14 +302,32 @@ footer {
   text-align: center;
 }
 
-/* line 41, ../sass/_grids.scss */
+/* line 27, ../sass/_grids.scss */
+.form-wrapper {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 29, ../sass/_grids.scss */
+.form-wrapper form {
+  font-size: 1.2em;
+  width: 83.05084746%;
+  float: left;
+  margin-left: 8.47457627%;
+  margin-right: -100%;
+  padding: 2em;
+  margin-bottom: 15px;
+}
+
+/* line 38, ../sass/_grids.scss */
 .logo-row {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 43, ../sass/_grids.scss */
+/* line 40, ../sass/_grids.scss */
 .logo-row > img {
   width: 32.20338983%;
   float: left;
@@ -165,20 +336,20 @@ footer {
   height: 500px;
 }
 
-/* line 49, ../sass/_grids.scss */
+/* line 45, ../sass/_grids.scss */
 .buttons {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
 }
-/* line 52, ../sass/_grids.scss */
+/* line 48, ../sass/_grids.scss */
 .buttons > .links {
   -webkit-flex-grow: 1;
   flex-grow: 1;
 }
 
-/* line 58, ../sass/_grids.scss */
+/* line 52, ../sass/_grids.scss */
 .wrap {
   width: 100%;
   float: left;
@@ -186,7 +357,7 @@ footer {
   margin-right: 0;
 }
 
-/* line 61, ../sass/_grids.scss */
+/* line 55, ../sass/_grids.scss */
 .main-content {
   width: 83.05084746%;
   float: left;
@@ -194,7 +365,7 @@ footer {
   margin-right: -100%;
 }
 
-/* line 65, ../sass/_grids.scss */
+/* line 58, ../sass/_grids.scss */
 .mc-slider {
   width: 49.15254237%;
   float: left;
@@ -202,7 +373,7 @@ footer {
   margin-right: -100%;
 }
 
-/* line 71, ../sass/_grids.scss */
+/* line 62, ../sass/_grids.scss */
 .blog-wrapper {
   width: 66.10169492%;
   float: left;
@@ -210,14 +381,14 @@ footer {
   margin-right: -100%;
 }
 
-/* line 74, ../sass/_grids.scss */
+/* line 65, ../sass/_grids.scss */
 .blog-sidebar {
   width: 23.72881356%;
   float: right;
   margin-right: 0;
 }
 
-/* line 80, ../sass/_grids.scss */
+/* line 68, ../sass/_grids.scss */
 .gallery-item > img {
   max-width: 300px;
 }
@@ -305,7 +476,16 @@ li a {
   text-decoration: none;
 }
 
-/* line 66, ../sass/_typography.scss */
+/* line 67, ../sass/_typography.scss */
+.form-wrapper h2 {
+  text-align: center;
+}
+/* line 71, ../sass/_typography.scss */
+.form-wrapper .form-text {
+  text-align: center;
+}
+
+/* line 76, ../sass/_typography.scss */
 .fb-right, .fb-left {
   font-size: 0.75em;
   line-height: 2em;

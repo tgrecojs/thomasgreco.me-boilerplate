@@ -4,19 +4,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
-
-//var routes = require('./routes/index');
-
-// Mongoose ODM...
+var underscore = require('underscore');
 var mongoose = require('mongoose');
-//var Contact = require('./models/schema');
+
+mongoose.connect('mongodb://localhost:27017/tg-doc');
 
 
 
 var app = express();
 
 // set our port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 // connect to our mongoDB database 
 // (uncomment after you enter in your own credentials in config/db.js)
@@ -56,7 +54,7 @@ app.get('/', function(req, res) {
 // -- New Code Below Here -- //
 
 // Create a new route with the prefix /contacts
-var contactsRoute = app.route('/contact');
+var contactsRoute = app.route('/api/contact');
 
 // Create endpoint /api/contacts for POSTS
 contactsRoute.post(function(req, res) {

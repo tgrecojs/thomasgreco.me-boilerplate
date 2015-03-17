@@ -1,6 +1,5 @@
-var app = angular.module('app', ['ui.router', 'angular-flexslider', 'angularModalService']).
-
-config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+var app = angular.module('app', ['ui.router', 'angular-flexslider', 'angularModalService'])
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $urlRouterProvider.otherwise('/');
     $stateProvider
@@ -8,7 +7,9 @@ config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($s
             url: '/',
             views: {
                 '' : {
-                    templateUrl: 'templates/home.html'
+                    templateUrl: 'templates/home.html',
+                    controller : 'MainModalCtrl'
+
                 },
                 'Header@home': {
                     templateUrl: 'templates/Header.html',
@@ -47,10 +48,31 @@ config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($s
                 }
             }
         })
+        .state('contact', {
+            url: '/contact',
+            views: {
+                '' : {
+                    templateUrl: 'templates/contact.html'
+                },
+                'Header@contact': {
+                    templateUrl: 'templates/Header.html',
+                    controller: 'NavCtrl'
+                },
+
+                'Contact-Form@contact': {
+                    templateUrl: 'templates/form.html',
+                    controller: 'SliderCtrl'
+                },
+                'Footer@contact': {
+                    templateUrl: 'templates/Footer.html',
+                }
+            }
+        })
 
 
     //END ROUTE CONFIGURTATION
     }]);
+
       
 
 app.controller('RootCtrl', function($scope) {
@@ -58,56 +80,31 @@ app.controller('RootCtrl', function($scope) {
 
 });
 
-app.controller('ModalCtrl', function($scope, ModalService) {
 
-            $scope.yesNoResult = null;
-            $scope.complexResult = null;
-            $scope.customResult = null;
 
-            $scope.showYesNo = function() {
-
-                ModalService.showModal({
-                    templateUrl: "yesno/yesno.html",
-                    controller: "YesNoController"
-                }).then(function(modal) {
-                    modal.element.modal();
-                    modal.close.then(function(result) {
-                        $scope.yesNoResult = result ? "You said Yes" : "You said No";
-                    });
-                });
-
-            };
-
-            $scope.showComplex = function() {
-
-                ModalService.showModal({
-                    templateUrl: "templates/modal.html",
-                    controller: "ComplexController",
-                    inputs: {
-                        title: "A More Complex Example"
-                    }
-                }).then(function(modal) {
-                    modal.element.modal();
-                    modal.close.then(function(result) {
-                        $scope.complexResult = "Name: " + result.name + ", age: " + result.age;
-                    });
-                });
-
-            };
-
-            $scope.showCustom = function() {
-
-                ModalService.showModal({
-                    templateUrl: "custom/custom.html",
-                    controller: "CustomController"
-                }).then(function(modal) {
-                    modal.close.then(function(result) {
-                        $scope.customResult = "All good!";
-                    });
-                });
-
-            }
+app.controller('MainModalCtrl', function($scope, ModalService) {
+    
+    $scope.show = function() {
+        ModalService.showModal({
+            templateUrl: 'templates/main-modal.html',
+            controller: "ModalController"
+        }).then(function(modal) {
+            modal.element.modal();
+            modal.close.then(function(result) {
+                $scope.message = "You said " + result;
+            });
         });
+    };
+    
+});
+
+app.controller('ModalController', function($scope, close) {
+  
+ $scope.close = function(result) {
+    close(result, 500); // close, but give 500ms for bootstrap to animate
+ };
+
+});
 
         
 
