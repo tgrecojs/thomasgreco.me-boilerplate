@@ -1,6 +1,7 @@
-var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 'angularModalService'])
+var app = angular.module('app', ['firebase', 'ui.router.config', 'angular-flexslider', 'angularModalService'])
 
 
+angular.module('ui.router.config', ['ui.router'])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -27,25 +28,25 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
                 }
             }
         })
-        .state('blog', {
-            url: '/blog',
+        .state('about', {
+            url: '/this-app',
             views: {
                 '': {
-                    templateUrl: './templates/blog.html'
+                    templateUrl: './templates/about.html'
                 },
-                'Header@blog': {
+                'Header@about': {
                     templateUrl: './templates/header.html',
                     controller: 'NavCtrl'
                 },
 
-                'Blog-Content@blog': {
-                    templateUrl: './templates/blog-content.html',
+                'About-Content@about': {
+                    templateUrl: './templates/about-content.html',
                     controller: 'SliderCtrl'
                 },
-                'Sidebar@blog': {
-                    templateUrl: './templates/blog-sidebar.html'
+                'Sidebar@about': {
+                    templateUrl: './templates/about-sidebar.html'
                 },
-                'Footer@blog': {
+                'Footer@about': {
                     templateUrl: './templates/footer.html'
                 }
             }
@@ -130,12 +131,11 @@ app.controller('firebaseCtrl', function($scope, Person) {
 
 
 app.controller('RootCtrl', function($scope, $http) {
+    $scope.list;
 
 
-    $http.get('api.tumblr.com/v2/blog/tg18509.tumblr.com/posts/text?api_key=CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf')
+    $http.jsonp('api.tumblr.com/v2/blog/tg18509.tumblr.com/posts/text?callback=JSON_CALLBACK?api_key={CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf}')
     .then(function (data) {
-        $scope.blog;
-        $scope.data = data.data;
         console.log(data);
     })
 });
@@ -177,7 +177,6 @@ app.controller('NavCtrl', function($scope) {
     });
 
 });
-
 
 
 

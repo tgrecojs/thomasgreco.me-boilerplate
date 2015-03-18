@@ -74,8 +74,11 @@ footer {
     @include span(6 at 4 isolate);
 }
 //Blog Assets
-.blog-wrapper {
-    @include span(8 at 2 isolate);
+.about-wrapper {
+    @include clearfix;
+    .panel_item {
+        @include gallery(4 of 12);
+    }
 }
 .blog-sidebar {
     @include span(3 last);
