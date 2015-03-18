@@ -23,7 +23,7 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
                     controller: 'SliderCtrl'
                 },
                 'Footer@home': {
-                    templateUrl: './templates/Footer.html',
+                    templateUrl: './templates/Footer.html'
                 }
             }
         })
@@ -46,7 +46,7 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
                     templateUrl: './templates/blog-sidebar.html'
                 },
                 'Footer@blog': {
-                    templateUrl: './templates/Footer.html',
+                    templateUrl: './templates/Footer.html'
                 }
             }
         })
@@ -86,7 +86,7 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
                     controller: 'SliderCtrl'
                 },
                 'Footer@contact': {
-                    templateUrl: './templates/Footer.html',
+                    templateUrl: './templates/Footer.html'
                 }
             }
         })
