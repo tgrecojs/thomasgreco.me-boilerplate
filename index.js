@@ -5,16 +5,14 @@ var cookieParser = require('cookie-parser');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 
+//var routes = require('./routes/index');
+
+// Mongoose ODM...
 var mongoose = require('mongoose');
-//require('./models/comments');
-//require('./models/contacts');
-
-//mongoose.connect('mongodb://localhost:27017/doc-tg');
-
 //var Contact = require('./models/schema');
 
 // Connect to MongoDB...
-//mongoose.connect('mongodb://tom:beerdoc@ds041671.mongolab.com:41671/heroku_app33526064');
+mongoose.connect('mongodb://tom:beerdoc@ds041671.mongolab.com:41671/heroku_app33526064');
 
 
 var app = express();
@@ -54,9 +52,33 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', function(req, res) {
-    res.json({
-        message: 'You are running dangerously low on contact!'
-    });
+  res.json({ message: 'You are running dangerously low on contact!' });
+});
+
+// -- New Code Below Here -- //
+
+// Create a new route with the prefix /contacts
+var contactsRoute = app.route('/contact');
+
+// Create endpoint /api/contacts for POSTS
+contactsRoute.post(function(req, res) {
+  // Create a new instance of the contact model
+  var contact = new Contact();
+
+  // Set the contact properties that came from the POST data
+  contact.name = req.body.name;
+  contact.phone = req.body.phone;
+  contact.email = req.body.email;
+  contact.location = req.body.location;
+  contact.message = req.body.message;
+
+  // Save the contact and check for errors
+  contact.save(function(err) {
+    if (err)
+      res.send(err);
+
+    res.json({ message: 'contact added to the locker!', data: contact });
+  });
 });
 
 
