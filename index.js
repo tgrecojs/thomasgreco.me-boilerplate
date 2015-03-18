@@ -1,13 +1,93 @@
 var express = require('express');
+var path = require('path');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var methodOverride = require('method-override');
+var bodyParser = require('body-parser');
+
+//var routes = require('./routes/index');
+
+// Mongoose ODM...
+var mongoose = require('mongoose');
+//var Contact = require('./models/schema');
+
+// Connect to MongoDB...
+mongoose.connect('mongodb://tom:beerdoc@ds041671.mongolab.com:41671/heroku_app33526064');
+
+
 var app = express();
 
-app.set('port', (process.env.PORT || 5000));
+// set our port
+var port = process.env.PORT || 8080;
+
+// connect to our mongoDB database 
+// (uncomment after you enter in your own credentials in config/db.js)
+// mongoose.connect(db.url); 
+
+//logger = morgan - logs errors to console
+app.use(logger('dev'));
+
+
+// get all data/stuff of the body (POST) parameters
+// parse application/json 
+app.use(bodyParser.json());
+
+// parse application/vnd.api+json as json
+app.use(bodyParser.json({
+    type: 'application/vnd.api+json'
+}));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+// override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
+app.use(methodOverride('X-HTTP-Method-Override'));
+
+// set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
+// routes ==================================================
+
+
+app.get('/', function(req, res) {
+  res.json({ message: 'You are running dangerously low on contact!' });
 });
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'));
+// -- New Code Below Here -- //
+
+// Create a new route with the prefix /contacts
+var contactsRoute = app.route('/contact');
+
+// Create endpoint /api/contacts for POSTS
+contactsRoute.post(function(req, res) {
+  // Create a new instance of the contact model
+  var contact = new Contact();
+
+  // Set the contact properties that came from the POST data
+  contact.name = req.body.name;
+  contact.phone = req.body.phone;
+  contact.email = req.body.email;
+  contact.location = req.body.location;
+  contact.message = req.body.message;
+
+  // Save the contact and check for errors
+  contact.save(function(err) {
+    if (err)
+      res.send(err);
+
+    res.json({ message: 'contact added to the locker!', data: contact });
+  });
 });
+
+
+// start app ===============================================
+// startup our app at http://localhost:8080
+app.listen(port);
+
+// shoutout to the user                     
+console.log('Magic happens on port ' + port);
+
+// expose app           
+exports = module.exports = app;
