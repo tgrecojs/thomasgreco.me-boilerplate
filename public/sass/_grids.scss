@@ -24,16 +24,6 @@ footer {
     color: white;
     text-align: center;
 }
-.form-wrapper {
-    @include span(full);
-            form {
-                font-size: 1.2em;
-                @extend .roundedborder;
-                @include span(10 at 2 isolate);
-                padding: 2em;
-                margin-bottom: 15px;
-            }
-        }
 
 .logo-row {
     @include span(12);
@@ -51,13 +41,32 @@ footer {
 }
 .wrap {
     @include span(full);
-    .gallery {
+}
+
+.form-wrapper {
+    @include span(full);
+    form {
+                
+            font-size: 1.2em;
+                @extend .roundedborder;
+                @include span(10 at 2 isolate);
+                padding: 2em;
+                margin-bottom: 15px;
+            }
+
+}
+
+
+.gallery {
         @include clearfix;
         .gallery-item {
             @include gallery(2 of 8)
         }
     }
-}
+
+
+
+
 .main-content {
     @include span(10 at 2 isolate);
 }
