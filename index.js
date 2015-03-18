@@ -6,10 +6,10 @@ var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-require('./models/comments');
-require('./models/contacts');
+//require('./models/comments');
+//require('./models/contacts');
 
-mongoose.connect('mongodb://localhost:27017/doc-tg');
+//mongoose.connect('mongodb://localhost:27017/doc-tg');
 
 //var Contact = require('./models/schema');
 
