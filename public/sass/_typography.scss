@@ -1,10 +1,13 @@
 $base-font-size: 16px;
 //Line height should be base-font-s
 $base-line-height: 24px;
-$font-one: "Prenton";
+$font-one: "Chapparal-Pro";
+$title-font: "Chapparal-Pro-Display";
+$footer-font : "Expo-Serif-Pro";
 $light: 300;
 $regular: 400;
 $medium: 500;
+$bold : 600;
 $text-shadow: 1px -2px 0px rgba(150, 150, 150, 1);
 body {
     font-family: $font-one;

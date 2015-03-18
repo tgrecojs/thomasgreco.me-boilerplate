@@ -10,7 +10,7 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
             views: {
                 '': {
                     templateUrl: './templates/home.html',
-                    controller: 'MainModalCtrl'
+                    controller: 'RootCtrl'
 
                 },
                 'Header@home': {
@@ -129,10 +129,19 @@ app.controller('firebaseCtrl', function($scope, Person) {
 
 
 
-app.controller('RootCtrl', function($scope) {
-    $scope.bar = [];
+app.controller('RootCtrl', function($scope, $http) {
 
+
+    $http.get('api.tumblr.com/v2/blog/tg18509.tumblr.com/posts/text?api_key=CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf')
+    .then(function (data) {
+        $scope.blog;
+        $scope.data = data.data;
+        console.log(data);
+    })
 });
+    //
+
+
 
 
 
@@ -184,45 +193,11 @@ app.controller('SliderCtrl', function($scope, $timeout) {
         './images/skills/html5x300.png',
         './images/skills/yeoman.png',
         './images/skills/nodejs350.png',
-        './images/skills/angular.png',
+        './images/skills/Angular.png',
         './images/skills/firebase.png',
         './images/skills/grunt.png',
-        './images/skills/sass320x320.png',
-        './images/skills/bower.png'
+        './images/skills/Sass320x320.png',
+        './images/skills/Bower.png'
 
     ];
 });
-
-
-var fbService = angular.module('fbService', ['firebase', '$scope'])
-
-fbService.value('fbURL', 'https://rest-api.firebaseio.com/contacts');
-
-fbService.factory('Message', function(fbURL, $firebase) {
-    return $firebase(new Firebase(fbURL)).$asArray();
-
-});
-
-fbService.controller('formController',
-    function($scope, Message) {
-        $scope.add = function() {
-            //ADD TO FIREBASE
-            var save = Message.$add({
-                name: $scope.name,
-                location: $scope.location,
-                email: $scope.email,
-                reason: $scope.phone,
-                message: $scope.message,
-                date: Date()
-            });
-
-
-            //RESET MESSAGE
-            $scope.name = "";
-            $scope.location = "";
-            $scope.email = "";
-            $scope.reason = "";
-            $scope.message = "";
-        }
-    }
-);

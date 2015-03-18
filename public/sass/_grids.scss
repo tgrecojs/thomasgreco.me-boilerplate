@@ -51,6 +51,12 @@ footer {
 }
 .wrap {
     @include span(full);
+    .gallery {
+        @include clearfix;
+        .gallery-item {
+            @include gallery(2 of 8)
+        }
+    }
 }
 .main-content {
     @include span(10 at 2 isolate);
@@ -64,7 +70,4 @@ footer {
 }
 .blog-sidebar {
     @include span(3 last);
-}
-.gallery-item > img {
-    max-width: 300px;
 }
