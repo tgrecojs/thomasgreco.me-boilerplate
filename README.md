@@ -1,15 +1,36 @@
-##Angular Single Page Application - thomasgreco.me
+# node-js-getting-started
 
-**Technologies In this Project**
-	* absolute naming with [ui-router](https://github.com/angular-ui/ui-router/) to create nested views for each page.
-	* The Compass framework to create 12 column grid with the Susy Grid System.
-	* Utilized jQuery in correlation with [TinyNav.js](https://github.com/viljamis/TinyNav.js) to appened the `#nav` ID selector to create a dropdown menu on viewports smaller than 768px.  
-	* Defined a schema for my contact form on the server using Mongoose with MongoDB. I then referred to this schema in angular to ensure PUT requests are issued when a form is submitted.
+A barebones Node.js app using [Express 4](http://expressjs.com/).
 
-###Next Steps:
-* Create an admin dashboard for users, to sign-in, and create a content management systems for creating posts, and other future resources.
+This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
-###Technologies I am thinking of using... 
-* [Firebase](https://firebase.com) & a solution similar to [FirePad](https://firepad.io) 
-* [Blogger](https://developers.google.com/blogger/docs/1.0/developers_guide_js)
-* [Swagger.io](http://swagger.io/)
+## Running Locally
+
+Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+
+```sh
+$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
+$ cd node-js-getting-started
+$ npm install
+$ npm start
+```
+
+Your app should now be running on [localhost:5000](http://localhost:5000/).
+
+## Deploying to Heroku
+
+```
+$ heroku create
+$ git push heroku master
+$ heroku open
+```
+
+## Documentation
+
+For more information about using Node.js on Heroku, see these Dev Center articles:
+
+- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
+- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
+- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
+- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)

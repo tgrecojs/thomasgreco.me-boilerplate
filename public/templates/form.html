@@ -1,18 +1,18 @@
 <div class="form-wrapper">
   <h2>Contact Me Today!</h2>
 <p class="form-text">Want to get in touch? Fill out the form below, &amp; I will see that I get back to you as soon as possible</p>
-<form action="#">
+<form ng-submit="add()">
   <div>
     <label for="name">Name:</label>
-    <input type="text" name="name" id="name" placeholder="" />
+    <input ng-model="name" type="text" name="name" id="name" placeholder="" />
   </div>
    <div>
     <label for="name">E-Mail Address:</label>
-    <input type="text" name="email" id="name" placeholder="" />
+    <input ng-model="email" type="text" name="email" id="email" placeholder="" />
   </div>
    <div>
     <label for="name">Location:</label>
-    <input type="text" name="location" id="name" placeholder="" />
+    <input ng-model="location" type="text" name="location" id="location" placeholder="" />
   </div>
 
  
@@ -20,7 +20,7 @@
   <div class="select-wrapper">
     <label for="select-choice">Reason for Contact:</label>
     <div class="styled-select" for="select-choice">
-      <select name="select-choice" id="select-choice">
+      <select ng-model="reason"name="reason" id="reason">
         <option value="Web Development">Web Development Enquiry</option>
         <option value="Graphic Design">Help with Graphic Design</option>
         <option value="Just Saying Hello">Just Saying Hello</option>
@@ -31,14 +31,14 @@
   
   <div class="clr">
     <label for="textarea">How May I Be of Assistance?</label><br />
-    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+    <textarea ng-model="message" cols="40" rows="8" name="textarea" id="message"></textarea>
   </div>
 
   
   <br /><br />
   
   <div>
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Save" />
     <div class="clr"></div>
   </div>
 </form> 
