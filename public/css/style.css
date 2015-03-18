@@ -448,61 +448,70 @@ footer {
 
 /* line 12, ../sass/_typography.scss */
 body {
-  font-family: "Chapparal-Pro";
+  font-family: "Merriweather";
 }
 
 /* line 15, ../sass/_typography.scss */
 h1 {
   font-size: 2.25em;
   line-height: 1.33333333em;
-  margin-bottom: 0.66666667em;
-  font-weight: 500;
+  margin-top: 0.66666667em;
+  font-weight: 700;
 }
 
 /* line 21, ../sass/_typography.scss */
 h2 {
   font-size: 1.5em;
   line-height: 2em;
-  margin-bottom: 1em;
-  font-weight: 500;
+  margin-top: 1em;
+  font-weight: 700;
+}
+/* line 25, ../sass/_typography.scss */
+h2 .main-heading {
+  text-align: center;
 }
 
-/* line 26, ../sass/_typography.scss */
+/* line 29, ../sass/_typography.scss */
 h1.blue-head {
   color: #2b94c2;
 }
 
-/* line 29, ../sass/_typography.scss */
+/* line 32, ../sass/_typography.scss */
 h3 {
   font-size: 1.3125em;
   line-height: 2.28571429em;
   font-weight: 300;
 }
-/* line 32, ../sass/_typography.scss */
+/* line 35, ../sass/_typography.scss */
 h3 center {
   text-align: center;
 }
 
-/* line 36, ../sass/_typography.scss */
+/* line 39, ../sass/_typography.scss */
 p {
   font-size: 1em;
   line-height: 1.5em;
   margin-bottom: 1.5em;
+  font-weight: 300;
+}
+/* line 43, ../sass/_typography.scss */
+p > em {
+  font-style: italic;
 }
 
-/* line 41, ../sass/_typography.scss */
+/* line 48, ../sass/_typography.scss */
 .lr-heading {
   text-align: center;
 }
 
-/* line 45, ../sass/_typography.scss */
+/* line 52, ../sass/_typography.scss */
 .header-text {
   font-size: 1.125em;
   line-height: 1.33333333em;
   margin-bottom: 1.33333333em;
 }
 
-/* line 49, ../sass/_typography.scss */
+/* line 56, ../sass/_typography.scss */
 .quote-text {
   font-size: 1.375em;
   line-height: 2.18181818em;
@@ -512,33 +521,33 @@ p {
   color: white;
 }
 
-/* line 56, ../sass/_typography.scss */
+/* line 63, ../sass/_typography.scss */
 .top-nav > li a {
   font-size: 1.125em;
   line-height: 1.33333333em;
   padding-right: 1.33333333em;
 }
 
-/* line 61, ../sass/_typography.scss */
+/* line 68, ../sass/_typography.scss */
 .bottom-nav-items > li a {
   @inclde adjust-font-size-to(18px);
 }
 
-/* line 65, ../sass/_typography.scss */
+/* line 72, ../sass/_typography.scss */
 li a {
   text-decoration: none;
 }
 
-/* line 70, ../sass/_typography.scss */
+/* line 77, ../sass/_typography.scss */
 .form-wrapper h2 {
   text-align: center;
 }
-/* line 74, ../sass/_typography.scss */
+/* line 81, ../sass/_typography.scss */
 .form-wrapper .form-text {
   text-align: center;
 }
 
-/* line 79, ../sass/_typography.scss */
+/* line 86, ../sass/_typography.scss */
 .fb-right, .fb-left {
   font-size: 0.75em;
   line-height: 2em;
