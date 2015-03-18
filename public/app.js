@@ -14,16 +14,16 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
 
                 },
                 'Header@home': {
-                    templateUrl: './templates/Header.html',
+                    templateUrl: './templates/header.html',
                     controller: 'NavCtrl'
                 },
 
                 'Main-Content@home': {
-                    templateUrl: './templates/Main-Content.html',
+                    templateUrl: './templates/main-content.html',
                     controller: 'SliderCtrl'
                 },
                 'Footer@home': {
-                    templateUrl: './templates/Footer.html'
+                    templateUrl: './templates/footer.html'
                 }
             }
         })
@@ -34,7 +34,7 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
                     templateUrl: './templates/blog.html'
                 },
                 'Header@blog': {
-                    templateUrl: './templates/Header.html',
+                    templateUrl: './templates/header.html',
                     controller: 'NavCtrl'
                 },
 
@@ -46,7 +46,7 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
                     templateUrl: './templates/blog-sidebar.html'
                 },
                 'Footer@blog': {
-                    templateUrl: './templates/Footer.html'
+                    templateUrl: './templates/footer.html'
                 }
             }
         })
@@ -57,7 +57,7 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
                     templateUrl: './templates/contact.html'
                 },
                 'Header@contact': {
-                    templateUrl: './templates/Header.html',
+                    templateUrl: './templates/header.html',
                     controller: 'NavCtrl'
                 },
 
@@ -66,7 +66,7 @@ var app = angular.module('app', ['firebase', 'ui.router', 'angular-flexslider', 
                     controller: 'firebaseCtrl'
                 },
                 'Footer@contact': {
-                    templateUrl: './templates/Footer.html'
+                    templateUrl: './templates/footer.html'
                 }
             }
         })
