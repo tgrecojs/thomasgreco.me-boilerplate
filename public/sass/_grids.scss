@@ -64,7 +64,7 @@ footer {
 .gallery {
     @include clearfix;
     .gallery-item {
-        @include gallery(2 of 8)
+        @include gallery(2 of 8);
     }
 }
 
@@ -77,19 +77,18 @@ footer {
 }
 
 //Blog Assets
-.about-wrapper {
-    @include clearfix;
-    .panel_item {
-        @include gallery(4 of 12);
+
+.blog-wrap {
+    @include span(9);
+    .blog-sidebar {
+        @include span(3 last);
     }
 }
 
-
-
-.blog-roll {
-    @include span(9);
-    padding: 1.5em;
-    .blog-sidebar {
-        @include span(3 last);
+.panel-wrap {
+    @include span(full);
+    .panel_item {
+        @include gallery(4 of 12);
+        padding: 1em;
     }
 }

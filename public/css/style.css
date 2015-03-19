@@ -411,48 +411,50 @@ footer {
   margin-right: -100%;
 }
 
-/* line 80, ../sass/_grids.scss */
-.about-wrapper {
-  overflow: hidden;
-  *zoom: 1;
+/* line 81, ../sass/_grids.scss */
+.blog-wrap {
+  width: 74.57627119%;
+  float: left;
+  margin-right: 1.69491525%;
 }
-/* line 82, ../sass/_grids.scss */
-.about-wrapper .panel_item {
+/* line 83, ../sass/_grids.scss */
+.blog-wrap .blog-sidebar {
+  width: 23.72881356%;
+  float: right;
+  margin-right: 0;
+}
+
+/* line 88, ../sass/_grids.scss */
+.panel-wrap {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 90, ../sass/_grids.scss */
+.panel-wrap .panel_item {
   width: 32.20338983%;
   float: left;
+  padding: 1em;
 }
 /* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.about-wrapper .panel_item:nth-child(3n + 1) {
+.panel-wrap .panel_item:nth-child(3n + 1) {
   margin-left: 0;
   margin-right: -100%;
   clear: both;
   margin-left: 0;
 }
 /* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.about-wrapper .panel_item:nth-child(3n + 2) {
+.panel-wrap .panel_item:nth-child(3n + 2) {
   margin-left: 33.89830508%;
   margin-right: -100%;
   clear: none;
 }
 /* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.about-wrapper .panel_item:nth-child(3n + 3) {
+.panel-wrap .panel_item:nth-child(3n + 3) {
   margin-left: 67.79661017%;
   margin-right: -100%;
   clear: none;
-}
-
-/* line 89, ../sass/_grids.scss */
-.blog-roll {
-  width: 74.57627119%;
-  float: left;
-  margin-right: 1.69491525%;
-  padding: 1.5em;
-}
-/* line 92, ../sass/_grids.scss */
-.blog-roll .blog-sidebar {
-  width: 23.72881356%;
-  float: right;
-  margin-right: 0;
 }
 
 /* line 12, ../sass/_typography.scss */
@@ -480,70 +482,92 @@ h2 .main-heading {
   text-align: center;
 }
 
-/* line 29, ../sass/_typography.scss */
+/* line 30, ../sass/_typography.scss */
+.panel-heading {
+  font-size: 1.5em;
+  line-height: 2em;
+  margin-bottom: 1em;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* line 37, ../sass/_typography.scss */
 h1.blue-head {
   color: #2b94c2;
 }
 
-/* line 32, ../sass/_typography.scss */
+/* line 40, ../sass/_typography.scss */
 h3 {
   font-size: 1.3125em;
   line-height: 2.28571429em;
   font-weight: 300;
 }
-/* line 35, ../sass/_typography.scss */
-h3 .center {
+/* line 43, ../sass/_typography.scss */
+h3 center {
   text-align: center;
 }
 
-/* line 39, ../sass/_typography.scss */
+/* line 47, ../sass/_typography.scss */
 p {
   font-size: 1em;
   line-height: 1.5em;
   margin-bottom: 1.5em;
   font-weight: 300;
 }
-/* line 43, ../sass/_typography.scss */
+/* line 51, ../sass/_typography.scss */
 p > em {
   font-style: italic;
 }
 
-/* line 48, ../sass/_typography.scss */
-.blog-roll > h2, h3, h4 {
+/* line 56, ../sass/_typography.scss */
+.lr-heading {
   text-align: center;
 }
 
-/* line 53, ../sass/_typography.scss */
+/* line 60, ../sass/_typography.scss */
+.header-text {
+  font-size: 1.125em;
+  line-height: 1.33333333em;
+  margin-bottom: 1.33333333em;
+}
+
+/* line 64, ../sass/_typography.scss */
+.quote-text {
+  font-size: 1.375em;
+  line-height: 2.18181818em;
+  margin-top: 1.09090909em;
+  margin-bottom: 5px;
+  text-align: center;
+  color: white;
+}
+
+/* line 71, ../sass/_typography.scss */
 .top-nav > li a {
   font-size: 1.125em;
   line-height: 1.33333333em;
   padding-right: 1.33333333em;
 }
 
-/* line 58, ../sass/_typography.scss */
+/* line 76, ../sass/_typography.scss */
 .bottom-nav-items > li a {
   @inclde adjust-font-size-to(18px);
 }
 
-/* line 62, ../sass/_typography.scss */
+/* line 80, ../sass/_typography.scss */
 li a {
   text-decoration: none;
 }
 
-/* line 67, ../sass/_typography.scss */
+/* line 85, ../sass/_typography.scss */
 .form-wrapper h2 {
   text-align: center;
 }
-/* line 71, ../sass/_typography.scss */
-.form-wrapper .form-text {
-  text-align: center;
-}
 
-/* line 76, ../sass/_typography.scss */
-.fb-right, .fb-left {
-  font-size: 0.75em;
-  line-height: 2em;
-  margin: 0px;
+/* line 89, ../sass/_typography.scss */
+.footer-text {
+  font-size: 1em;
+  line-height: 1.5em;
+  padding-top: 1.5em;
 }
 
 @media (min-width: 320px) {

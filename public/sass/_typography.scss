@@ -26,13 +26,21 @@ h2 {
         text-align: center;
     }
 }
+
+.panel-heading {
+    @include adjust-font-size-to(24px);
+    margin-bottom: rhythm(1, 24px);
+    font-weight: $bold;
+    text-align: center;
+}
+
 h1.blue-head {
     color: #2b94c2;
 }
 h3 {
     @include adjust-font-size-to(21px);
     font-weight: $light;
-    .center {
+    center {
         text-align: center
     }
 }
@@ -45,11 +53,21 @@ p {
     }
 }
 
-.blog-roll > h2, h3, h4 {
+.lr-heading {
     text-align: center;
 }
 
-
+.header-text {
+    @include adjust-font-size-to(18px);
+    margin-bottom: rhythm(1, 18px);
+}
+.quote-text {
+    @include adjust-font-size-to(22px);
+    margin-top: rhythm(1, 22px);
+    margin-bottom: 5px;
+    text-align: center;
+    color: white;
+}
 .top-nav > li a {
     @include adjust-font-size-to(18px);
     padding-right: rhythm(1, 18px);
@@ -66,14 +84,9 @@ li a {
 .form-wrapper {
  h2 {
     text-align: center;
-    
-}
-.form-text {
-        text-align: center;
     }
 }
-
-.fb-right, .fb-left {
-    @include adjust-font-size-to(12px);
-    margin: 0px;
+.footer-text {
+    @include adjust-font-size-to(16px);
+    padding-top: rhythm(1, 16px);
 }
