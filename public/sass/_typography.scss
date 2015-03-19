@@ -32,7 +32,7 @@ h1.blue-head {
 h3 {
     @include adjust-font-size-to(21px);
     font-weight: $light;
-    center {
+    .center {
         text-align: center
     }
 }
@@ -45,21 +45,11 @@ p {
     }
 }
 
-.lr-heading {
+.blog-roll > h2, h3, h4 {
     text-align: center;
 }
 
-.header-text {
-    @include adjust-font-size-to(18px);
-    margin-bottom: rhythm(1, 18px);
-}
-.quote-text {
-    @include adjust-font-size-to(22px);
-    margin-top: rhythm(1, 22px);
-    margin-bottom: 5px;
-    text-align: center;
-    color: white;
-}
+
 .top-nav > li a {
     @include adjust-font-size-to(18px);
     padding-right: rhythm(1, 18px);

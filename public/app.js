@@ -51,6 +51,28 @@ angular.module('ui.router.config', ['ui.router'])
                 }
             }
         })
+        .state('blog', {
+            url: '/blog',
+            views: {
+                '': {
+                    templateUrl: './templates/blog.html'
+                },
+                'Header@blog': {
+                    templateUrl: './templates/header.html',
+                    controller: 'NavCtrl'
+                },
+
+                'Blog-Roll@blog': {
+                    templateUrl: './templates/blog-roll.html'
+                },
+                'Sidebar@blog': {
+                    templateUrl: './templates/blog-sidebar.html'
+                },
+                'Footer@blog': {
+                    templateUrl: './templates/footer.html'
+                }
+            }
+        })
         .state('contact', {
             url: '/contact',
             views: {
@@ -134,7 +156,7 @@ app.controller('RootCtrl', function($scope, $http) {
     $scope.blog;
 
 
-    $http.get('api.tumblr.com/v2/blog/tg18509.tumblr.com/posts/text?callback=JSON_CALLBACK?api_key=CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf')
+    $http.get('api.tumblr.com/v2/blog/tg18509.tumblr.com/posts?api_key=CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf?callback=JSON_CALLBACK')
     .then(function (data) {
         console.log(data);
     })

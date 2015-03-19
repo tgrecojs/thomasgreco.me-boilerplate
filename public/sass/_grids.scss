@@ -8,15 +8,20 @@ container-position: center, // left, center, it is the padding
 //gutter-position: after, //before after | split | inside | inside-static
 columns: 12, gutters: 1/4, //Space Between Elements
 global-box-sizing: border-box, debug: (image: show-columns, output: overlay, toggle: top left));
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
+
 body {
     @include container;
 }
+
 header {
     @include span(full);
 }
+
 footer {
     @include span(full);
     height: 100px;
@@ -32,6 +37,7 @@ footer {
         height: 500px;
     }
 }
+
 .buttons {
     @include display-flex;
     @include flex-flow(row wrap);
@@ -39,6 +45,7 @@ footer {
         @include flex-grow(1);
     }
 }
+
 .wrap {
     @include span(full);
 }
@@ -46,33 +53,29 @@ footer {
 .form-wrapper {
     @include span(full);
     form {
-                
-            font-size: 1.2em;
-                @extend .roundedborder;
-                @include span(10 at 2 isolate);
-                padding: 2em;
-                margin-bottom: 15px;
-            }
-
+        font-size: 1.2em;
+        @extend .roundedborder;
+        @include span(10 at 2 isolate);
+        padding: 2em;
+        margin-bottom: 15px;
+    }
 }
 
-
 .gallery {
-        @include clearfix;
-        .gallery-item {
-            @include gallery(2 of 8)
-        }
+    @include clearfix;
+    .gallery-item {
+        @include gallery(2 of 8)
     }
-
-
-
+}
 
 .main-content {
     @include span(10 at 2 isolate);
 }
+
 .mc-slider {
     @include span(6 at 4 isolate);
 }
+
 //Blog Assets
 .about-wrapper {
     @include clearfix;
@@ -80,9 +83,13 @@ footer {
         @include gallery(4 of 12);
     }
 }
-.blog-wrap{
+
+
+
+.blog-roll {
     @include span(9);
-.blog-sidebar {
-    @include span(3 last);
+    padding: 1.5em;
+    .blog-sidebar {
+        @include span(3 last);
     }
 }
