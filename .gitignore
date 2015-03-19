@@ -3,3 +3,4 @@
 .bowerrc
 .sass-cache
 .jshintrc
+public/images/*.psd

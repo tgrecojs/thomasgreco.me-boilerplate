@@ -11,7 +11,7 @@ angular.module('ui.router.config', ['ui.router'])
             views: {
                 '': {
                     templateUrl: './templates/home.html',
-                    controller: 'RootCtrl'
+                    controller: 'BlogCtrl'
 
                 },
                 'Header@home': {
@@ -152,16 +152,24 @@ app.controller('firebaseCtrl', function($scope, Person) {
 
 
 
+
 app.controller('RootCtrl', function($scope, $http) {
-    $scope.blog;
 
-
-    $http.get('api.tumblr.com/v2/blog/tg18509.tumblr.com/posts?api_key=CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf?callback=JSON_CALLBACK')
-    .then(function (data) {
-        console.log(data);
-    })
-});
+    });
     //
+
+
+
+app.controller('BlogCtrl', function($scope, $http) {
+$scope.realTimeData;
+
+  var url = "http://api.tumblr.com/v2/blog/pitchersandpoets.tumblr.com/posts?api_key=CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf" + "?callback=JSON_CALLBACK";
+
+    $http.jsonp(url)
+        .success(function(data){
+            $scope.realTimeData = data;
+        });
+});
 
 
 
