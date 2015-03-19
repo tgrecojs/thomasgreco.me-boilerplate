@@ -80,6 +80,9 @@ footer {
         @include gallery(4 of 12);
     }
 }
+.blog-wrap{
+    @include span(9);
 .blog-sidebar {
     @include span(3 last);
+    }
 }

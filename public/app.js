@@ -131,10 +131,10 @@ app.controller('firebaseCtrl', function($scope, Person) {
 
 
 app.controller('RootCtrl', function($scope, $http) {
-    $scope.list;
+    $scope.blog;
 
 
-    $http.jsonp('api.tumblr.com/v2/blog/tg18509.tumblr.com/posts/text?callback=JSON_CALLBACK?api_key={CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf}')
+    $http.get('api.tumblr.com/v2/blog/tg18509.tumblr.com/posts/text?callback=JSON_CALLBACK?api_key=CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf')
     .then(function (data) {
         console.log(data);
     })

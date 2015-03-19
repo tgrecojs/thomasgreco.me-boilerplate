@@ -440,7 +440,13 @@ footer {
 }
 
 /* line 83, ../sass/_grids.scss */
-.blog-sidebar {
+.blog-wrap {
+  width: 74.57627119%;
+  float: left;
+  margin-right: 1.69491525%;
+}
+/* line 85, ../sass/_grids.scss */
+.blog-wrap .blog-sidebar {
   width: 23.72881356%;
   float: right;
   margin-right: 0;
