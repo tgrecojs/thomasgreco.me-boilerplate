@@ -118,7 +118,7 @@ textarea {
 input[type='submit'] {
   @extend .roundedborder;
   border: 3px solid darken($bg, 10%);
-  background-color:lighten($navy-blue, 50%);
+  background-color: $navy-blue;
   cursor:pointer;
   color: #fff;
   float:right;

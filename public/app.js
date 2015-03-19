@@ -15,7 +15,7 @@ angular.module('ui.router.config', ['ui.router'])
 
                 },
                 'Header@home': {
-                    templateUrl: './templates/header.html',
+                    templateUrl: './templates/nav.html',
                     controller: 'NavCtrl'
                 },
 
@@ -35,7 +35,7 @@ angular.module('ui.router.config', ['ui.router'])
                     templateUrl: './templates/about.html'
                 },
                 'Header@about': {
-                    templateUrl: './templates/header.html',
+                    templateUrl: './templates/nav.html',
                     controller: 'NavCtrl'
                 },
 
@@ -58,7 +58,7 @@ angular.module('ui.router.config', ['ui.router'])
                     templateUrl: './templates/blog.html'
                 },
                 'Header@blog': {
-                    templateUrl: './templates/header.html',
+                    templateUrl: './templates/nav.html',
                     controller: 'NavCtrl'
                 },
 
@@ -80,7 +80,7 @@ angular.module('ui.router.config', ['ui.router'])
                     templateUrl: './templates/contact.html'
                 },
                 'Header@contact': {
-                    templateUrl: './templates/header.html',
+                    templateUrl: './templates/nav.html',
                     controller: 'NavCtrl'
                 },
 
@@ -100,7 +100,7 @@ angular.module('ui.router.config', ['ui.router'])
                     templateUrl: './templates/contact.html'
                 },
                 'Header@contact': {
-                    templateUrl: './templates/Header.html',
+                    templateUrl: './templates/nav.html',
                     controller: 'NavCtrl'
                 },
 

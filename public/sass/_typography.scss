@@ -73,8 +73,9 @@ p {
     padding-right: rhythm(1, 18px);
 }
 
-.bottom-nav-items > li a {
-    @inclde adjust-font-size-to(18px);
+input[type='submit'] {
+    font-family: $font-one;
+    font-weight: $bold;
 }
 
 li a {

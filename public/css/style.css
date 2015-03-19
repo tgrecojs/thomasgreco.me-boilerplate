@@ -203,7 +203,7 @@ textarea {
 /* line 118, ../sass/_form.scss */
 input[type='submit'] {
   border: 3px solid #e6e6e6;
-  background-color: #6178f6;
+  background-color: #051153;
   cursor: pointer;
   color: #fff;
   float: right;
@@ -549,21 +549,22 @@ p > em {
 }
 
 /* line 76, ../sass/_typography.scss */
-.bottom-nav-items > li a {
-  @inclde adjust-font-size-to(18px);
+input[type='submit'] {
+  font-family: "Merriweather";
+  font-weight: 700;
 }
 
-/* line 80, ../sass/_typography.scss */
+/* line 81, ../sass/_typography.scss */
 li a {
   text-decoration: none;
 }
 
-/* line 85, ../sass/_typography.scss */
+/* line 86, ../sass/_typography.scss */
 .form-wrapper h2 {
   text-align: center;
 }
 
-/* line 89, ../sass/_typography.scss */
+/* line 90, ../sass/_typography.scss */
 .footer-text {
   font-size: 1em;
   line-height: 1.5em;
