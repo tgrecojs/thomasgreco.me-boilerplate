@@ -216,14 +216,14 @@ input[type='submit']:hover {
   background-color: #0e2fe3;
 }
 
-/* line 11, ../sass/_grids.scss */
+/* line 12, ../sass/_grids.scss */
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
-/* line 17, ../sass/_grids.scss */
+/* line 18, ../sass/_grids.scss */
 body {
   max-width: 100%;
   margin-left: auto;
@@ -284,7 +284,7 @@ head:hover ~ body:before, head:hover ~ body body:before {
   background-position: left top;
 }
 
-/* line 21, ../sass/_grids.scss */
+/* line 22, ../sass/_grids.scss */
 header {
   width: 100%;
   float: left;
@@ -292,7 +292,7 @@ header {
   margin-right: 0;
 }
 
-/* line 25, ../sass/_grids.scss */
+/* line 26, ../sass/_grids.scss */
 footer {
   width: 100%;
   float: left;
@@ -304,14 +304,14 @@ footer {
   text-align: center;
 }
 
-/* line 33, ../sass/_grids.scss */
+/* line 34, ../sass/_grids.scss */
 .logo-row {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 35, ../sass/_grids.scss */
+/* line 36, ../sass/_grids.scss */
 .logo-row > img {
   width: 32.20338983%;
   float: left;
@@ -320,20 +320,20 @@ footer {
   height: 500px;
 }
 
-/* line 41, ../sass/_grids.scss */
+/* line 42, ../sass/_grids.scss */
 .buttons {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
 }
-/* line 44, ../sass/_grids.scss */
+/* line 45, ../sass/_grids.scss */
 .buttons > .links {
   -webkit-flex-grow: 1;
   flex-grow: 1;
 }
 
-/* line 49, ../sass/_grids.scss */
+/* line 50, ../sass/_grids.scss */
 .wrap {
   width: 100%;
   float: left;
@@ -341,14 +341,14 @@ footer {
   margin-right: 0;
 }
 
-/* line 53, ../sass/_grids.scss */
+/* line 54, ../sass/_grids.scss */
 .form-wrapper {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 55, ../sass/_grids.scss */
+/* line 56, ../sass/_grids.scss */
 .form-wrapper form {
   font-size: 1.2em;
   width: 83.05084746%;
@@ -358,7 +358,7 @@ footer {
   padding: 2em;
   margin-bottom: 15px;
 }
-/* line 62, ../sass/_grids.scss */
+/* line 63, ../sass/_grids.scss */
 .form-wrapper .button-row {
   width: 32.20338983%;
   float: left;
@@ -366,12 +366,12 @@ footer {
   margin-right: -100%;
 }
 
-/* line 67, ../sass/_grids.scss */
+/* line 68, ../sass/_grids.scss */
 .gallery {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 69, ../sass/_grids.scss */
+/* line 70, ../sass/_grids.scss */
 .gallery .gallery-item {
   width: 23.07692308%;
   float: left;
@@ -402,7 +402,7 @@ footer {
   clear: none;
 }
 
-/* line 74, ../sass/_grids.scss */
+/* line 75, ../sass/_grids.scss */
 .main-content {
   width: 83.05084746%;
   float: left;
@@ -410,7 +410,7 @@ footer {
   margin-right: -100%;
 }
 
-/* line 78, ../sass/_grids.scss */
+/* line 79, ../sass/_grids.scss */
 .mc-slider {
   width: 49.15254237%;
   float: left;
@@ -432,36 +432,60 @@ footer {
 }
 
 /* line 91, ../sass/_grids.scss */
-.panel-wrap {
+.about-box {
+  width: 49.15254237%;
+  float: left;
+  margin-left: 25.42372881%;
+  margin-right: -100%;
+  border: 2px solid #000;
+  padding: 20px;
+}
+
+/* line 97, ../sass/_grids.scss */
+.about-hr {
+  width: 90%;
+}
+
+/* line 101, ../sass/_grids.scss */
+.bottom_wrapper {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 93, ../sass/_grids.scss */
-.panel-wrap .panel_item {
-  width: 32.20338983%;
+/* line 103, ../sass/_grids.scss */
+.bottom_wrapper .centered_div {
+  width: 49.15254237%;
   float: left;
-  padding: 1em;
-}
-/* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.panel-wrap .panel_item:nth-child(3n + 1) {
-  margin-left: 0;
+  margin-left: 25.42372881%;
   margin-right: -100%;
-  clear: both;
-  margin-left: 0;
+  margin-top: 1.25em;
 }
-/* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.panel-wrap .panel_item:nth-child(3n + 2) {
-  margin-left: 33.89830508%;
+
+/* line 109, ../sass/_grids.scss */
+.panel-wrap {
+  width: 83.05084746%;
+  float: left;
+  margin-left: 8.47457627%;
   margin-right: -100%;
-  clear: none;
+  text-align: center;
 }
-/* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.panel-wrap .panel_item:nth-child(3n + 3) {
-  margin-left: 67.79661017%;
-  margin-right: -100%;
-  clear: none;
+/* line 112, ../sass/_grids.scss */
+.panel-wrap .panel {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 114, ../sass/_grids.scss */
+.panel-wrap .panel .panel-img {
+  width: 15.25423729%;
+  float: left;
+  margin-right: 1.69491525%;
+}
+/* line 116, ../sass/_grids.scss */
+.panel-wrap .panel .panel-img .panel-text {
+  width: 66.10169492%;
+  float: left;
+  margin-right: 1.69491525%;
 }
 
 /* line 12, ../sass/_typography.scss */
@@ -520,25 +544,33 @@ p {
   line-height: 1.5em;
   margin-bottom: 1.5em;
   font-weight: 300;
+  text-align: justify;
 }
-/* line 51, ../sass/_typography.scss */
+/* line 52, ../sass/_typography.scss */
 p > em {
   font-style: italic;
 }
 
-/* line 56, ../sass/_typography.scss */
+/* line 58, ../sass/_typography.scss */
+.about-intro {
+  font-style: italic;
+  text-align: justify;
+  padding: 1em;
+}
+
+/* line 64, ../sass/_typography.scss */
 .lr-heading {
   text-align: center;
 }
 
-/* line 60, ../sass/_typography.scss */
+/* line 68, ../sass/_typography.scss */
 .header-text {
   font-size: 1.125em;
   line-height: 1.33333333em;
   margin-bottom: 1.33333333em;
 }
 
-/* line 64, ../sass/_typography.scss */
+/* line 72, ../sass/_typography.scss */
 .quote-text {
   font-size: 1.375em;
   line-height: 2.18181818em;
@@ -548,30 +580,30 @@ p > em {
   color: white;
 }
 
-/* line 71, ../sass/_typography.scss */
+/* line 79, ../sass/_typography.scss */
 .top-nav > li a {
   font-size: 1.125em;
   line-height: 1.33333333em;
   padding-right: 1.33333333em;
 }
 
-/* line 76, ../sass/_typography.scss */
+/* line 84, ../sass/_typography.scss */
 .button {
   font-family: "Merriweather";
   font-weight: 700;
 }
 
-/* line 81, ../sass/_typography.scss */
+/* line 89, ../sass/_typography.scss */
 li a {
   text-decoration: none;
 }
 
-/* line 86, ../sass/_typography.scss */
+/* line 94, ../sass/_typography.scss */
 .form-wrapper h2 {
   text-align: center;
 }
 
-/* line 90, ../sass/_typography.scss */
+/* line 98, ../sass/_typography.scss */
 .footer-text {
   font-size: 1em;
   line-height: 1.5em;

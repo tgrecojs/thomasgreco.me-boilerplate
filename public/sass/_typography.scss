@@ -48,9 +48,17 @@ p {
     @include adjust-font-size-to(16px);
     margin-bottom: rhythm(1, 16px);
     font-weight: $light;
+    text-align: justify;
     > em {
         font-style: $italic;
     }
+}
+
+
+.about-intro {
+    font-style: $italic;
+    text-align: justify;
+    padding: 1em;
 }
 
 .lr-heading {

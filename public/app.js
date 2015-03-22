@@ -11,17 +11,17 @@ angular.module('ui.router.config', ['ui.router'])
             views: {
                 '': {
                     templateUrl: './templates/home.html',
-                    controller: 'BlogCtrl'
+                    controller: 'BlogController'
 
                 },
                 'Header@home': {
                     templateUrl: './templates/nav.html',
-                    controller: 'NavCtrl'
+                    controller: 'NavController'
                 },
 
                 'Main-Content@home': {
                     templateUrl: './templates/main-content.html',
-                    controller: 'SliderCtrl'
+                    controller: 'SliderController'
                 },
                 'Footer@home': {
                     templateUrl: './templates/footer.html'
@@ -36,14 +36,14 @@ angular.module('ui.router.config', ['ui.router'])
                 },
                 'Header@about': {
                     templateUrl: './templates/nav.html',
-                    controller: 'NavCtrl'
+                    controller: 'NavController'
                 },
 
-                'About-Content@about': {
-                    templateUrl: './templates/about-content.html'
+                'Top-Content@about': {
+                    templateUrl: './templates/top-content.html'
                 },
-                'Sidebar@about': {
-                    templateUrl: './templates/about-sidebar.html'
+                'Bottom-Content@about': {
+                    templateUrl: './templates/bottom-content.html'
                 },
                 'Footer@about': {
                     templateUrl: './templates/footer.html'
@@ -58,7 +58,7 @@ angular.module('ui.router.config', ['ui.router'])
                 },
                 'Header@blog': {
                     templateUrl: './templates/nav.html',
-                    controller: 'NavCtrl'
+                    controller: 'NavController'
                 },
 
                 'Blog-Roll@blog': {
@@ -80,35 +80,33 @@ angular.module('ui.router.config', ['ui.router'])
                 },
                 'Header@contact': {
                     templateUrl: './templates/nav.html',
-                    controller: 'NavCtrl'
+                    controller: 'NavController'
                 },
 
                 'Contact-Form@contact': {
                     templateUrl: './templates/form.html',
-                    controller: 'firebaseCtrl'
+                    controller: 'FirebaseController'
                 },
                 'Footer@contact': {
                     templateUrl: './templates/footer.html'
                 }
             }
         })
-        .state('login', {
-            url: '/contact',
+        .state('account', {
+            url: '/account',
             views: {
                 '': {
-                    templateUrl: './templates/contact.html'
+                    templateUrl: './templates/login.html'
                 },
-                'Header@contact': {
+                'Header@account': {
                     templateUrl: './templates/nav.html',
-                    controller: 'NavCtrl'
+                    controller: 'NavController'
                 },
-
-                'Contact-Form@contact': {
-                    templateUrl: './templates/form.html',
-                    controller: 'SliderCtrl'
+                'Account-Info@account': {
+                    templateUrl: './templates/account.html'
                 },
-                'Footer@contact': {
-                    templateUrl: './templates/Footer.html'
+                'Footer@account': {
+                    templateUrl: './templates/footer.html'
                 }
             }
         })
@@ -123,7 +121,7 @@ app.value('fbURL', 'https://rest-api.firebaseio.com/')
     });
 
 
-app.controller('firebaseCtrl', function($scope, Person) {
+app.controller('FirebaseController', function($scope, Person) {
     $scope.add = function() {
         var save = Person.$add({
             name: $scope.name,
@@ -142,7 +140,7 @@ app.controller('firebaseCtrl', function($scope, Person) {
         if (save) {
             alert('saved successfully');
         } else {
-            alert('something went wrong');
+            return alert('something went wrong');
         }
     }
     });
@@ -152,14 +150,14 @@ app.controller('firebaseCtrl', function($scope, Person) {
 
 
 
-app.controller('RootCtrl', function($scope, $http) {
+app.controller('RootController', function($scope, $http) {
 
     });
     //
 
 
 
-app.controller('BlogCtrl', function($scope, $http) {
+app.controller('BlogController', function($scope, $http) {
 $scope.realTimeData;
 
   var url = "http://api.tumblr.com/v2/blog/pitchersandpoets.tumblr.com/posts?api_key=CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf" + "?callback=JSON_CALLBACK";
@@ -174,7 +172,7 @@ $scope.realTimeData;
 
 
 
-app.controller('MainModalCtrl', function($scope, ModalService) {
+app.controller('MainModalController', function($scope, ModalService) {
 
     $scope.show = function() {
         ModalService.showModal({
@@ -200,7 +198,7 @@ app.controller('ModalController', function($scope, close) {
 
 
 
-app.controller('NavCtrl', function($scope) {
+app.controller('NavController', function($scope) {
     $(function() {
         $("#nav").tinyNav();
     });
@@ -209,10 +207,10 @@ app.controller('NavCtrl', function($scope) {
 
 
 
-app.controller('WijmoGalleryCtrl', function($scope) {
+app.controller('WijmoGalleryController', function($scope) {
     $scope.vm = this;
 });
-app.controller('SliderCtrl', function($scope, $timeout) {
+app.controller('SliderController', function($scope, $timeout) {
     $scope.slides = [
         './images/skills/AI6.png',
         './images/skills/cs6.png',

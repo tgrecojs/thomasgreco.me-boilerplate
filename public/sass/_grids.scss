@@ -1,5 +1,6 @@
 // Requirements
 // ============
+@import "compass/css3";
 @import "susy";
 $navy-blue: #051153;
 $susy: ( flow: ltr, math: fluid, // static requires column-width
@@ -80,7 +81,6 @@ footer {
 }
 
 //Blog Assets
-
 .blog-wrap {
     @include span(9);
     .blog-sidebar {
@@ -88,10 +88,35 @@ footer {
     }
 }
 
-.panel-wrap {
+.about-box {
+    @include span(6 at 4 isolate);
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+.about-hr {
+    width: 90%;    
+}
+
+.bottom_wrapper {
     @include span(full);
-    .panel_item {
-        @include gallery(4 of 12);
-        padding: 1em;
+    .centered_div {
+        @include span(6 at 4 isolate);
+        margin-top: 1.25em;
     }
 }
+
+.panel-wrap {
+    @include span(10 at 2 isolate);
+    text-align: center;
+     .panel {
+        @include clearfix;
+         .panel-img {
+            @include span(2);
+            .panel-text {
+                @include span(8);
+            }
+        }
+    }
+}
+

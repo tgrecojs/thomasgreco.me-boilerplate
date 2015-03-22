@@ -4,6 +4,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
+var formidable = require('formidable');
+var http = require('http');
+var fs = require('fs-extra');
 
 //var routes = require('./routes/index');
 
@@ -51,36 +54,41 @@ app.use(express.static(__dirname + '/public'));
 // routes ==================================================
 
 
-app.get('/', function(req, res) {
-  res.json({ message: 'You are running dangerously low on contact!' });
-});
-
 // -- New Code Below Here -- //
 
-// Create a new route with the prefix /contacts
-var contactsRoute = app.route('/contact');
+http.createServer(function(req, res) {
 
-// Create endpoint /api/contacts for POSTS
-contactsRoute.post(function(req, res) {
-  // Create a new instance of the contact model
-  var contact = new Contact();
+    // Form uploading Process code
+    //Upload route
+    if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
 
-  // Set the contact properties that came from the POST data
-  contact.name = req.body.name;
-  contact.phone = req.body.phone;
-  contact.email = req.body.email;
-  contact.location = req.body.location;
-  contact.message = req.body.message;
+        // creates a new incoming form. 
+        var form = new formidable.IncomingForm();
 
-  // Save the contact and check for errors
-  contact.save(function(err) {
-    if (err)
-      res.send(err);
-
-    res.json({ message: 'contact added to the locker!', data: contact });
-  });
-});
-
+        // parse a file upload
+        form.parse(req, function(err, fields, files) {
+            res.writeHead(200, {
+                'content-type': 'text/plain'
+            });
+            res.write('Upload received :\n');
+            res.end(util.inspect({
+                fields: fields,
+                files: files
+            }));
+        });
+        return;
+    }
+    /* Displaying file upload form. */
+    res.writeHead(200, {
+        'content-type': 'text/html'
+    });
+    res.end(
+        '<form action="/upload" method="post" enctype="multipart/form-data">' +
+        '<input type="file" name="upload" multiple="multiple"><br>' +
+        '<input type="submit" value="Upload">' +
+        '</form>'
+    );
+})
 
 // start app ===============================================
 // startup our app at http://localhost:8080
