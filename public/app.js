@@ -40,8 +40,7 @@ angular.module('ui.router.config', ['ui.router'])
                 },
 
                 'About-Content@about': {
-                    templateUrl: './templates/about-content.html',
-                    controller: 'SliderCtrl'
+                    templateUrl: './templates/about-content.html'
                 },
                 'Sidebar@about': {
                     templateUrl: './templates/about-sidebar.html'

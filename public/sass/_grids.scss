@@ -59,6 +59,9 @@ footer {
         padding: 2em;
         margin-bottom: 15px;
     }
+    .button-row {
+        @include span(4 at 5 isolate);
+    }
 }
 
 .gallery {
