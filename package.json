@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.2",
-  "description": "A sample Node.js app using Express 4",
+  "name": "thomasgreco-boilerplate-app",
+  "version": "1.0.0",
+  "description": "A SPA Using Node, Angular, and FireBase",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

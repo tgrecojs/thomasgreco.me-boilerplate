@@ -51,44 +51,8 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
 
-// routes ==================================================
+//  Where routes would be placed or called 
 
-
-// -- New Code Below Here -- //
-
-http.createServer(function(req, res) {
-
-    // Form uploading Process code
-    //Upload route
-    if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
-
-        // creates a new incoming form. 
-        var form = new formidable.IncomingForm();
-
-        // parse a file upload
-        form.parse(req, function(err, fields, files) {
-            res.writeHead(200, {
-                'content-type': 'text/plain'
-            });
-            res.write('Upload received :\n');
-            res.end(util.inspect({
-                fields: fields,
-                files: files
-            }));
-        });
-        return;
-    }
-    /* Displaying file upload form. */
-    res.writeHead(200, {
-        'content-type': 'text/html'
-    });
-    res.end(
-        '<form action="/upload" method="post" enctype="multipart/form-data">' +
-        '<input type="file" name="upload" multiple="multiple"><br>' +
-        '<input type="submit" value="Upload">' +
-        '</form>'
-    );
-})
 
 // start app ===============================================
 // startup our app at http://localhost:8080
