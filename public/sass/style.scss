@@ -17,7 +17,7 @@
 
 @media (min-width: 320px) {
     header {
-        background-image: url('/images/nyc-bg.jpg');
+        background-image: url('/images/nyc-60.jpg');
         background-size: cover;
         height: 350px;
     }
@@ -123,7 +123,8 @@
     /* styles for mobile */
      @media screen and (max-width: 669px) {
         .nav-toggle {
-            @include span(10);
+            @include span(full);
+            background: white;
         .tinynav {
             display: block;
             width: 100%;

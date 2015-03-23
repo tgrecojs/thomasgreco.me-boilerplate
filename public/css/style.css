@@ -2055,7 +2055,7 @@ input.button-tiny, button.button-tiny {
 @media (min-width: 320px) {
   /* line 19, ../sass/style.scss */
   header {
-    background-image: url("/images/nyc-bg.jpg");
+    background-image: url("/images/nyc-60.jpg");
     background-size: cover;
     height: 350px;
   }
@@ -2181,16 +2181,18 @@ input.button-tiny, button.button-tiny {
 @media screen and (max-width: 669px) {
   /* line 125, ../sass/style.scss */
   .nav-toggle {
-    width: 83.05084746%;
+    width: 100%;
     float: left;
-    margin-right: 1.69491525%;
+    margin-left: 0;
+    margin-right: 0;
+    background: white;
   }
-  /* line 127, ../sass/style.scss */
+  /* line 128, ../sass/style.scss */
   .nav-toggle .tinynav {
     display: block;
     width: 100%;
   }
-  /* line 131, ../sass/style.scss */
+  /* line 132, ../sass/style.scss */
   .nav-toggle #nav {
     display: none;
   }
