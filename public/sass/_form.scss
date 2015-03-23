@@ -121,8 +121,7 @@ input[type='submit'] {
   background-color: $navy-blue;
   cursor:pointer;
   color: #fff;
-  float:right;
+  height: 85px;
   font-size:1.5em;
-  padding: .25em 1em;
 }
 input[type='submit']:hover {background-color:lighten($navy-blue,30%);}

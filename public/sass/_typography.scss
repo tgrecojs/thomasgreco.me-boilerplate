@@ -95,7 +95,14 @@ li a {
     text-align: center;
     }
 }
+
+.main-heading {
+    text-align: center;
+}
+
 .footer-text {
     @include adjust-font-size-to(16px);
     padding-top: rhythm(1, 16px);
+    text-align: center;
+    text-weight: $bold;
 }

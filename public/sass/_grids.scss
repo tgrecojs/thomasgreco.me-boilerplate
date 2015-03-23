@@ -51,6 +51,11 @@ footer {
     @include span(full);
 }
 
+
+.form-header {
+    @include span(8 at 4 isolate);
+}
+
 .form-wrapper {
     @include span(full);
     form {
@@ -63,6 +68,11 @@ footer {
     .button-row {
         @include span(4 at 5 isolate);
     }
+}
+
+.form-wrapper > h2, p {
+    text-align: center;
+    padding: 1.125em;
 }
 
 .gallery {
@@ -118,5 +128,10 @@ footer {
             }
         }
     }
+}
+
+
+.button {
+    height: 50px;
 }
 

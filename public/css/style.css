@@ -206,12 +206,11 @@ input[type='submit'] {
   background-color: #051153;
   cursor: pointer;
   color: #fff;
-  float: right;
+  height: 85px;
   font-size: 1.5em;
-  padding: .25em 1em;
 }
 
-/* line 128, ../sass/_form.scss */
+/* line 127, ../sass/_form.scss */
 input[type='submit']:hover {
   background-color: #0e2fe3;
 }
@@ -341,14 +340,22 @@ footer {
   margin-right: 0;
 }
 
-/* line 54, ../sass/_grids.scss */
+/* line 55, ../sass/_grids.scss */
+.form-header {
+  width: 66.10169492%;
+  float: left;
+  margin-left: 25.42372881%;
+  margin-right: -100%;
+}
+
+/* line 59, ../sass/_grids.scss */
 .form-wrapper {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 56, ../sass/_grids.scss */
+/* line 61, ../sass/_grids.scss */
 .form-wrapper form {
   font-size: 1.2em;
   width: 83.05084746%;
@@ -358,7 +365,7 @@ footer {
   padding: 2em;
   margin-bottom: 15px;
 }
-/* line 63, ../sass/_grids.scss */
+/* line 68, ../sass/_grids.scss */
 .form-wrapper .button-row {
   width: 32.20338983%;
   float: left;
@@ -366,12 +373,18 @@ footer {
   margin-right: -100%;
 }
 
-/* line 68, ../sass/_grids.scss */
+/* line 73, ../sass/_grids.scss */
+.form-wrapper > h2, p {
+  text-align: center;
+  padding: 1.125em;
+}
+
+/* line 78, ../sass/_grids.scss */
 .gallery {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 70, ../sass/_grids.scss */
+/* line 80, ../sass/_grids.scss */
 .gallery .gallery-item {
   width: 23.07692308%;
   float: left;
@@ -402,7 +415,7 @@ footer {
   clear: none;
 }
 
-/* line 75, ../sass/_grids.scss */
+/* line 85, ../sass/_grids.scss */
 .main-content {
   width: 83.05084746%;
   float: left;
@@ -410,7 +423,7 @@ footer {
   margin-right: -100%;
 }
 
-/* line 79, ../sass/_grids.scss */
+/* line 89, ../sass/_grids.scss */
 .mc-slider {
   width: 49.15254237%;
   float: left;
@@ -418,20 +431,20 @@ footer {
   margin-right: -100%;
 }
 
-/* line 84, ../sass/_grids.scss */
+/* line 94, ../sass/_grids.scss */
 .blog-wrap {
   width: 74.57627119%;
   float: left;
   margin-right: 1.69491525%;
 }
-/* line 86, ../sass/_grids.scss */
+/* line 96, ../sass/_grids.scss */
 .blog-wrap .blog-sidebar {
   width: 23.72881356%;
   float: right;
   margin-right: 0;
 }
 
-/* line 91, ../sass/_grids.scss */
+/* line 101, ../sass/_grids.scss */
 .about-box {
   width: 49.15254237%;
   float: left;
@@ -441,19 +454,19 @@ footer {
   padding: 20px;
 }
 
-/* line 97, ../sass/_grids.scss */
+/* line 107, ../sass/_grids.scss */
 .about-hr {
   width: 90%;
 }
 
-/* line 101, ../sass/_grids.scss */
+/* line 111, ../sass/_grids.scss */
 .bottom_wrapper {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 103, ../sass/_grids.scss */
+/* line 113, ../sass/_grids.scss */
 .bottom_wrapper .centered_div {
   width: 49.15254237%;
   float: left;
@@ -462,7 +475,7 @@ footer {
   margin-top: 1.25em;
 }
 
-/* line 109, ../sass/_grids.scss */
+/* line 119, ../sass/_grids.scss */
 .panel-wrap {
   width: 83.05084746%;
   float: left;
@@ -470,22 +483,27 @@ footer {
   margin-right: -100%;
   text-align: center;
 }
-/* line 112, ../sass/_grids.scss */
+/* line 122, ../sass/_grids.scss */
 .panel-wrap .panel {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 114, ../sass/_grids.scss */
+/* line 124, ../sass/_grids.scss */
 .panel-wrap .panel .panel-img {
   width: 15.25423729%;
   float: left;
   margin-right: 1.69491525%;
 }
-/* line 116, ../sass/_grids.scss */
+/* line 126, ../sass/_grids.scss */
 .panel-wrap .panel .panel-img .panel-text {
   width: 66.10169492%;
   float: left;
   margin-right: 1.69491525%;
+}
+
+/* line 134, ../sass/_grids.scss */
+.button {
+  height: 50px;
 }
 
 /* line 12, ../sass/_typography.scss */
@@ -603,11 +621,18 @@ li a {
   text-align: center;
 }
 
-/* line 98, ../sass/_typography.scss */
+/* line 99, ../sass/_typography.scss */
+.main-heading {
+  text-align: center;
+}
+
+/* line 103, ../sass/_typography.scss */
 .footer-text {
   font-size: 1em;
   line-height: 1.5em;
   padding-top: 1.5em;
+  text-align: center;
+  text-weight: 700;
 }
 
 /*! @license
