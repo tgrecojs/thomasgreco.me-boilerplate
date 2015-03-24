@@ -1,119 +1,158 @@
-var app = angular.module('app', ['firebase', 'ui.router.config', 'angular-flexslider', 'angularModalService'])
+var app = angular.module('app', ['firebase', 
+    'ui.router.config', 
+    'angular-flexslider', 
+    'angularModalService',
+    'ngResource'
+    ])
 
 
 angular.module('ui.router.config', ['ui.router'])
-.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise('/');
-    $stateProvider
-        .state('home', {
-            url: '/',
-            views: {
-                '': {
-                    templateUrl: './templates/home.html',
-                    controller: 'BlogController'
+        $urlRouterProvider.otherwise('/');
+        $stateProvider
+            .state('home', {
+                url: '/',
+                views: {
+                    '': {
+                        templateUrl: './templates/home.html'
+                    },
+                    'Header@home': {
+                        templateUrl: './templates/nav.html',
+                        controller: 'NavController'
+                    },
 
-                },
-                'Header@home': {
-                    templateUrl: './templates/nav.html',
-                    controller: 'NavController'
-                },
-
-                'Main-Content@home': {
-                    templateUrl: './templates/main-content.html',
-                    controller: 'SliderController'
-                },
-                'Footer@home': {
-                    templateUrl: './templates/footer.html'
+                    'Main-Content@home': {
+                        templateUrl: './templates/main-content.html',
+                        controller: 'SliderController'
+                    },
+                    'Footer@home': {
+                        templateUrl: './templates/footer.html'
+                    }
                 }
-            }
-        })
-        .state('about', {
-            url: '/this-app',
-            views: {
-                '': {
-                    templateUrl: './templates/about.html'
-                },
-                'Header@about': {
-                    templateUrl: './templates/nav.html',
-                    controller: 'NavController'
-                },
+            })
+            .state('about', {
+                url: '/this-app',
+                views: {
+                    '': {
+                        templateUrl: './templates/about.html'
+                    },
+                    'Header@about': {
+                        templateUrl: './templates/nav.html',
+                        controller: 'NavController'
+                    },
 
-                'Top-Content@about': {
-                    templateUrl: './templates/top-content.html'
-                },
-                'Bottom-Content@about': {
-                    templateUrl: './templates/bottom-content.html'
-                },
-                'Footer@about': {
-                    templateUrl: './templates/footer.html'
+                    'Top-Content@about': {
+                        templateUrl: './templates/top-content.html'
+                    },
+                    'Bottom-Content@about': {
+                        templateUrl: './templates/bottom-content.html'
+                    },
+                    'Footer@about': {
+                        templateUrl: './templates/footer.html'
+                    }
                 }
-            }
-        })
-        .state('blog', {
-            url: '/blog',
-            views: {
-                '': {
-                    templateUrl: './templates/blog.html'
-                },
-                'Header@blog': {
-                    templateUrl: './templates/nav.html',
-                    controller: 'NavController'
-                },
+            })
+            .state('blog', {
+                url: '/blog',
+                views: {
+                    '': {
+                        templateUrl: './templates/blog.html'
+                    },
+                    'Header@blog': {
+                        templateUrl: './templates/nav.html',
+                        controller: 'NavController'
+                    },
 
-                'Blog-Roll@blog': {
-                    templateUrl: './templates/blog-roll.html'
-                },
-                'Sidebar@blog': {
-                    templateUrl: './templates/blog-sidebar.html'
-                },
-                'Footer@blog': {
-                    templateUrl: './templates/footer.html'
+                    'Blog-Roll@blog': {
+                        templateUrl: './templates/blog-roll.html'
+                    },
+                    'Sidebar@blog': {
+                        templateUrl: './templates/blog-sidebar.html'
+                    },
+                    'Footer@blog': {
+                        templateUrl: './templates/footer.html'
+                    }
                 }
-            }
-        })
-        .state('contact', {
-            url: '/contact',
-            views: {
-                '': {
-                    templateUrl: './templates/contact.html'
-                },
-                'Header@contact': {
-                    templateUrl: './templates/nav.html',
-                    controller: 'NavController'
-                },
+            })
+            .state('contact', {
+                url: '/contact',
+                views: {
+                    '': {
+                        templateUrl: './templates/contact.html'
+                    },
+                    'Header@contact': {
+                        templateUrl: './templates/nav.html',
+                        controller: 'NavController'
+                    },
 
-                'Contact-Form@contact': {
-                    templateUrl: './templates/form.html',
-                    controller: 'FirebaseController'
-                },
-                'Footer@contact': {
-                    templateUrl: './templates/footer.html'
+                    'Contact-Form@contact': {
+                        templateUrl: './templates/form.html',
+                        controller: 'FirebaseController'
+                    },
+                    'Footer@contact': {
+                        templateUrl: './templates/footer.html'
+                    }
                 }
-            }
-        })
-        .state('account', {
-            url: '/account',
-            views: {
-                '': {
-                    templateUrl: './templates/login.html'
-                },
-                'Header@account': {
-                    templateUrl: './templates/nav.html',
-                    controller: 'NavController'
-                },
-                'Account-Info@account': {
-                    templateUrl: './templates/account.html'
-                },
-                'Footer@account': {
-                    templateUrl: './templates/footer.html'
+            })
+            .state('admin', {
+                url: '/admin',
+                views: {
+                    '': {
+                        templateUrl: './templates/login.html'
+                    },
+                    'Header@admin': {
+                        templateUrl: './templates/nav.html',
+                        controller: 'NavController'
+                    },
+                    'Blog-UI@admin': {
+                        templateUrl: './templates/post.html',
+                        controller: 'postController'
+                    },
+                    'Footer@admin': {
+                        templateUrl: './templates/footer.html'
+                    }
                 }
-            }
-        })
+            })
 
 
-    //END ROUTE CONFIGURTATION
-}]);
+        //END ROUTE CONFIGURTATION
+    }]);
+
+
+
+app.factory('Post', function ($resource) {
+    var Post = $resource('https://api.mongolab.com/api/1/databases/thomasgreco/collections/posts/:id',
+    {
+      apiKey:'VG9Bt0pY7wiNT8yuD9W21auYAgjq8C5W',
+      id:'@_id.$oid'
+    });
+
+    return Post;
+});
+
+app.controller('postController', function ($scope, Post) {
+
+    $scope.post = Post.query();
+
+    $scope.remove = function (post) {                 //Posts['delete']({}, post); //alternate
+    post.$delete();
+    alert('post removed. Refresh page to reflect changes.');
+    };
+
+    $scope.add = function () {
+        var post = new Post({
+            postAuthor: $scope.postAuthor,
+            postTitle: $scope.postTitle,
+            postMessage : $scope.postMessage
+          });
+        post.$save();
+        //Posts.save(post); //alternate method
+        alert('post added. Refresh page to reflect changes.');
+    };
+
+});
+
 
 app.value('fbURL', 'https://rest-api.firebaseio.com/')
     .factory('Person', function(fbURL, $firebase) {
@@ -143,29 +182,18 @@ app.controller('FirebaseController', function($scope, Person) {
             return alert('something went wrong');
         }
     }
-    });
+});
 
 
 
 
 
-
-app.controller('RootController', function($scope, $http) {
-
-    });
-    //
 
 
 
 app.controller('BlogController', function($scope, $http) {
-$scope.realTimeData;
 
-  var url = "http://api.tumblr.com/v2/blog/pitchersandpoets.tumblr.com/posts?api_key=CnNeCnRgvPewXintuzhdtOoXJ1IRbPZv3vOVIE7cYhbaKtYOwf" + "?callback=JSON_CALLBACK";
 
-    $http.jsonp(url)
-        .success(function(data){
-            $scope.realTimeData = data;
-        });
 });
 
 
@@ -195,6 +223,7 @@ app.controller('ModalController', function($scope, close) {
     };
 
 });
+
 
 
 

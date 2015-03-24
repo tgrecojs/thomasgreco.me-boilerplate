@@ -15,7 +15,8 @@ var mongoose = require('mongoose');
 //var Contact = require('./models/schema');
 
 // Connect to MongoDB...
-mongoose.connect('mongodb://tom:beerdoc@ds041671.mongolab.com:41671/heroku_app33526064');
+mongoose.connect('mongodb://tom:database@ds039020.mongolab.com:39020/thomasgreco');
+var api = require('./api/routes');
 
 
 var app = express();
@@ -49,7 +50,11 @@ app.use(bodyParser.urlencoded({
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 // set the static files location /public/img will be /img for users
-app.use(express.static(__dirname + '/public'));
+ //Add this line  
+app.set('views', path.join(__dirname, 'views'));  
+app.use(express.static(path.join(__dirname, 'public')));  
+
+app.use('/api', api); // Add this line  
 
 //  Where routes would be placed or called 
 
