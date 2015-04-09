@@ -4,20 +4,20 @@
     <form ng-submit="add()">
         <div>
             <label for="name">Name:</label>
-            <input ng-model="name" type="text" name="name" id="name" placeholder="" />
+            <input ng-model="contactName" type="text" name="contactName" id="name" placeholder="" />
         </div>
         <div>
             <label for="name">E-Mail Address:</label>
-            <input ng-model="email" type="text" name="email" id="email" placeholder="" />
+            <input ng-model="contactEmail" type="text" name="contactEmail" id="email" placeholder="" />
         </div>
         <div>
             <label for="name">Location:</label>
-            <input ng-model="location" type="text" name="location" id="location" placeholder="" />
+            <input ng-model="contactLocation" type="text" name="contactLocation" id="location" placeholder="" />
         </div>
         <div class="select-wrapper">
             <label for="select-choice">Reason for Contact:</label>
             <div class="styled-select" for="select-choice">
-                <select ng-model="reason" name="reason" id="reason">
+                <select ng-model="contactReason" name="reason" id="reason">
                     <option value="Web Development">Question About Web Development</option>
                     <option value="Graphic Design">Question About Graphic Design</option>
                              <option value="Job Inquiry">Job Inquiry</option>
@@ -28,7 +28,7 @@
         <div class="clr">
             <label for="textarea">How May I Be of Assistance?</label>
             <br />
-            <textarea ng-model="message" cols="40" rows="8" name="textarea" id="message"></textarea>
+            <textarea ng-model="contactMessage" cols="40" rows="8" name="textarea" id="message"></textarea>
         </div>
         <div>
             <input type="submit" value="Send" class="button button-rounded button-flat-primary">

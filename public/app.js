@@ -1,9 +1,9 @@
-var app = angular.module('app', ['firebase', 
-    'ui.router.config', 
-    'angular-flexslider', 
+var app = angular.module('app', ['firebase',
+    'ui.router.config',
+    'angular-flexslider',
     'angularModalService',
-    'ngResource'
-    ])
+    'ngResource',
+])
 
 
 angular.module('ui.router.config', ['ui.router'])
@@ -87,8 +87,8 @@ angular.module('ui.router.config', ['ui.router'])
                     },
 
                     'Contact-Form@contact': {
-                        templateUrl: './templates/form.html',
-                        controller: 'FirebaseController'
+                        templateUrl: './templates/firebase.html',
+                        controller: 'FirebaseFormController'
                     },
                     'Footer@contact': {
                         templateUrl: './templates/footer.html'
@@ -121,34 +121,70 @@ angular.module('ui.router.config', ['ui.router'])
 
 
 
-app.factory('Post', function ($resource) {
-    var Post = $resource('https://api.mongolab.com/api/1/databases/thomasgreco/collections/posts/:id',
-    {
-      apiKey:'VG9Bt0pY7wiNT8yuD9W21auYAgjq8C5W',
-      id:'@_id.$oid'
+app.factory('Posts', function($resource) {
+    var Posts = $resource('https://api.mongolab.com/api/1/databases/thomasgreco/collections/posts/:id', {
+        apiKey: 'VG9Bt0pY7wiNT8yuD9W21auYAgjq8C5W',
+        id: '@_id.$oid'
     });
 
-    return Post;
+    return Posts;
 });
 
-app.controller('postController', function ($scope, Post) {
 
-    $scope.post = Post.query();
 
-    $scope.remove = function (post) {                 //Posts['delete']({}, post); //alternate
-    post.$delete();
-    alert('post removed. Refresh page to reflect changes.');
+app.controller('postController', function($scope, Posts) {
+
+    $scope.posts = Posts.query();
+
+    $scope.remove = function(post) { //Posts['delete']({}, post); //alternate
+        post.$delete();
+        alert('post removed. Refresh page to reflect changes.');
     };
 
-    $scope.add = function () {
-        var post = new Post({
-            postAuthor: $scope.postAuthor,
+    $scope.add = function() {
+        var post = new Posts({
             postTitle: $scope.postTitle,
-            postMessage : $scope.postMessage
-          });
+            postAuthor: $scope.postAuthor,
+            postMessage: $scope.postMessage
+        });
         post.$save();
         //Posts.save(post); //alternate method
         alert('post added. Refresh page to reflect changes.');
+    };
+
+});
+
+
+app.factory('Contacts', function($resource) {
+    var Contacts = $resource('https://api.mongolab.com/api/1/databases/thomasgreco/collections/contacts/:id', {
+        apiKey: 'VG9Bt0pY7wiNT8yuD9W21auYAgjq8C5W',
+        id: '@_id.$oid'
+    });
+
+    return Contacts;
+});
+
+
+app.controller('contactController', function($scope, Contacts) {
+
+    $scope.contacts = Contacts.query();
+
+    $scope.remove = function(contact) { //Posts['delete']({}, post); //alternate
+        contact.$delete();
+        alert('contact removed. Refresh page to reflect changes.');
+    };
+
+    $scope.add = function() {
+        var contact = new Contacts({
+            contactName: $scope.contactName,
+            contactEmail: $scope.contactEmail,
+            contactLocation: $scope.contactLocation,
+            contactReason: $scope.contactReason,
+            contactMessage: $scope.contactMessage
+        });
+        contact.$save();
+        //Posts.save(post); //alternate method
+        alert('contact added. Refresh page to reflect changes.');
     };
 
 });
@@ -183,6 +219,45 @@ app.controller('FirebaseController', function($scope, Person) {
         }
     }
 });
+
+app.controller('FirebaseFormController', ['$scope', '$firebase',
+    function($scope, $firebase) {
+        //CREATE A FIREBASE REFERENCE
+        var ref = new Firebase("https://zaperr.firebaseio.com/");
+
+        // GET MESSAGES AS AN ARRAY
+        $scope.messages = $firebase(ref).$asArray();
+
+
+
+        //ADD MESSAGE METHOD
+        $scope.add = function(e) {
+
+            //LISTEN FOR RETURN KEY
+            if (e.keyCode === 13 && $scope.message) {
+                //ALLOW CUSTOM OR ANONYMOUS USER NAMES
+
+
+                //ADD TO FIREBASE
+                $scope.messages.$add({
+                    name: $scope.name,
+                    email: $scope.email,
+                    location: $scope.location,
+                    reason: $scope.reason,
+                    message: $scope.message
+                });
+
+
+                //RESET MESSAGE
+                $scope.message = "";
+                $scope.name = "";
+                $scope.location = "";
+                $scope.email = "";
+                $scope.reason = "";
+            }
+        }
+    }
+]);
 
 
 

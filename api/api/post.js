@@ -12,6 +12,8 @@ module.exports.addPost = function(req, res) {
         });
     });
 };
+
+
 module.exports.getAllPosts = function(req, res) {
     Post.find(function(err, posts) {
         if (err) {

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var posts = require('./api/post');
+var contacts = require('./api/contact')
 
 /* Posts routes */
 router.route('/posts')
@@ -10,6 +11,11 @@ router.route('/posts')
     })
     .get(function(req, res) {
         posts.getAllPosts(req, res)
+    });
+
+router.route('/contacts')
+    .post(function(req, res) {
+        contacts.addContact(req, res)
     });
 
 /* Single post routes */
@@ -23,5 +29,7 @@ router.route('/posts/:post_id')
     .delete(function(req, res) {
         posts.deletePost(req, res, req.params.post_id)
     });
+
+
 
 module.exports = router;

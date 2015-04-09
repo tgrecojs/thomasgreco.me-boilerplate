@@ -2070,8 +2070,18 @@ input.button-tiny, button.button-tiny {
   color: #FFF;
 }
 
+/* line 17, ../sass/style.scss */
+.panel {
+  background: #051153;
+}
+
+/* line 21, ../sass/style.scss */
+label {
+  padding-top: 10px;
+}
+
 @media (min-width: 320px) {
-  /* line 19, ../sass/style.scss */
+  /* line 26, ../sass/style.scss */
   header {
     background-image: url("/images/nyc-60.jpg");
     background-size: cover;
@@ -2079,7 +2089,7 @@ input.button-tiny, button.button-tiny {
   }
 }
 @media (min-width: 760px) {
-  /* line 26, ../sass/style.scss */
+  /* line 33, ../sass/style.scss */
   header {
     background-image: url("/images/nyc-60.jpg");
     background-size: cover;
@@ -2087,18 +2097,18 @@ input.button-tiny, button.button-tiny {
   }
 }
 @media screen and (max-width: 669px) {
-  /* line 35, ../sass/style.scss */
+  /* line 42, ../sass/style.scss */
   .flex-nav {
     display: none;
   }
 
-  /* line 38, ../sass/style.scss */
+  /* line 45, ../sass/style.scss */
   .flex-nav-item > a {
     display: none;
   }
 }
 @media screen and (min-width: 670px) {
-  /* line 46, ../sass/style.scss */
+  /* line 53, ../sass/style.scss */
   .flex-nav {
     display: -webkit-flex;
     display: flex;
@@ -2111,7 +2121,7 @@ input.button-tiny, button.button-tiny {
     padding: 10px;
   }
 
-  /* line 55, ../sass/style.scss */
+  /* line 62, ../sass/style.scss */
   .flex-nav-item, .search, .icon {
     -webkit-align-items: center;
     align-items: center;
@@ -2136,23 +2146,23 @@ input.button-tiny, button.button-tiny {
     color: #212;
   }
 
-  /* line 66, ../sass/style.scss */
+  /* line 73, ../sass/style.scss */
   .flex-nav-item:hover {
     background-color: #aaa;
   }
 
-  /* line 70, ../sass/style.scss */
+  /* line 77, ../sass/style.scss */
   .search {
     -webkit-flex-grow: 1;
     flex-grow: 1;
   }
-  /* line 73, ../sass/style.scss */
+  /* line 80, ../sass/style.scss */
   .search:hover {
     background-color: #aaa;
   }
 }
 @media screen and (min-width: 670px) {
-  /* line 81, ../sass/style.scss */
+  /* line 88, ../sass/style.scss */
   .bottom-flex-nav {
     display: -webkit-flex;
     display: flex;
@@ -2161,7 +2171,7 @@ input.button-tiny, button.button-tiny {
     width: 100%;
   }
 
-  /* line 86, ../sass/style.scss */
+  /* line 93, ../sass/style.scss */
   .bottom-nav-items {
     -webkit-align-items: center;
     align-items: center;
@@ -2173,29 +2183,29 @@ input.button-tiny, button.button-tiny {
     padding: 5px 10px;
   }
 
-  /* line 96, ../sass/style.scss */
+  /* line 103, ../sass/style.scss */
   .bottom-nav-items:hover {
     background-color: #aaa;
   }
 
-  /* line 100, ../sass/style.scss */
+  /* line 107, ../sass/style.scss */
   .icon {
     -webkit-flex-grow: 1;
     flex-grow: 1;
   }
-  /* line 103, ../sass/style.scss */
+  /* line 110, ../sass/style.scss */
   .icon:hover {
     background-color: #aaa;
   }
 }
-/* line 112, ../sass/style.scss */
+/* line 119, ../sass/style.scss */
 #nav, .tinynav {
   display: none;
 }
 
 /* styles for mobile */
 @media screen and (max-width: 669px) {
-  /* line 119, ../sass/style.scss */
+  /* line 126, ../sass/style.scss */
   .nav-toggle {
     width: 100%;
     float: left;
@@ -2203,7 +2213,7 @@ input.button-tiny, button.button-tiny {
     margin-right: 0;
     background: white;
   }
-  /* line 122, ../sass/style.scss */
+  /* line 129, ../sass/style.scss */
   .nav-toggle .tinynav {
     display: block;
     width: 100%;
