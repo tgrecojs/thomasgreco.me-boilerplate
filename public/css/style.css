@@ -2071,7 +2071,7 @@ input.button-tiny, button.button-tiny {
 }
 
 /* line 17, ../sass/style.scss */
-.panel {
+.panel .panel-primary {
   background: #051153;
 }
 
