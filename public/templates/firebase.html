@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-xs-12 col-md-6">
                <label for="email">Email Address</label>
-            <textarea ng-model='email' type='text' id='nameInput' placeholder='cowboys@hotmail.com' class="form-control name"></textarea>
+            <textarea ng-model='email' type='email' id='nameInput' placeholder='cowboys@hotmail.com' class="form-control name"></textarea>
         </div>
     </div>
     <div class="row">
@@ -21,7 +21,7 @@
     <div class="col-xs-12 col-md-6">
     <div class="panel panel-primary">
     <select ng-model="reason" name="reason" id="reason">
-        <option value="">Why are you contacting me today?</option>
+        <option value="">Reason for Contacting</option>
         <option value="Web Development">Question About Web Development</option>
         <option value="Graphic Design">Question About Graphic Design</option>
         <option value="Job Inquiry">Job Inquiry</option>
@@ -32,7 +32,7 @@
     </div>
     <div class="row row-centered">
         <div class="col-xs-12 col-md-10 col-centered">
-            <textarea ng-model='message' ng-keydown="add($event)" type='text' id='messageInput' placeholder='How may I assist you....' class="form-control comment"></textarea>
+            <textarea ng-model='message' ng-keydown="add($event)" ng-maxlength="800" type='text' id='messageInput' placeholder='How may I assist you....' class="form-control comment"></textarea>
         </div>
     </div>
     <h2 class="text-center">Hit enter on your keyboard to submit your message!</h2>
